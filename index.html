@@ -8,48 +8,148 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    
     :root {
-      --bg-primary: #070b14;
-      --bg-secondary: #0d1527;
-      --bg-card: rgba(16, 26, 48, 0.7);
-      --bg-card-hover: rgba(23, 37, 68, 0.9);
-      --border-color: rgba(56, 189, 248, 0.15);
-      --border-hover: rgba(56, 189, 248, 0.4);
-      --text-main: #f1f5f9;
+      --bg-primary: #030712;
+      --bg-secondary: #081026;
+      --bg-card: rgba(10, 18, 36, 0.72);
+      --bg-card-hover: rgba(15, 27, 54, 0.88);
+      --border-color: rgba(56, 189, 248, 0.18);
+      --border-hover: rgba(0, 240, 255, 0.6);
+      --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --accent-cyan: #00f2fe;
+      --accent-cyan: #00f0ff;
       --accent-blue: #38bdf8;
       --accent-emerald: #10b981;
       --accent-amber: #f59e0b;
-      --accent-purple: #a855f7;
-      --accent-glow: rgba(0, 242, 254, 0.18);
-      --code-bg: #050811;
+      --accent-purple: #818cf8;
+      --accent-glow: rgba(0, 240, 255, 0.28);
+      --code-bg: #040711;
       --font-main: 'Plus Jakarta Sans', sans-serif;
       --font-mono: 'Fira Code', monospace;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    #pcb3dCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+      background: radial-gradient(circle at 50% 15%, #08132b 0%, #030712 75%);
+    }
 
     body {
       background-color: var(--bg-primary);
       color: var(--text-main);
       font-family: var(--font-main);
       line-height: 1.6;
-      background-image: 
-        radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 85% 65%, rgba(16, 185, 129, 0.05) 0%, transparent 45%),
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
       overflow-x: hidden;
+      position: relative;
     }
 
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: var(--bg-primary); }
-    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
+    /* 3D Glassmorphism & Interactive Tilt for Cards */
+    .project-card, .skill-card, .edu-card {
+      position: relative;
+      background: var(--bg-card);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border-color);
+      transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+      transform-style: preserve-3d;
+      will-change: transform;
+      overflow: hidden;
+    }
 
-    .container {
+    .project-card::before, .skill-card::before, .edu-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(400px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(0, 240, 255, 0.14), transparent 60%);
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover::before, .skill-card:hover::before, .edu-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 20px 45px -10px rgba(0, 240, 255, 0.22), 0 0 25px rgba(0, 240, 255, 0.12);
+    }
+
+    /* Cybernetic Section Dividers */
+    .circuit-divider {
+      width: 100%;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 48px 0;
+      position: relative;
+    }
+    .circuit-divider-line {
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.35) 35%, rgba(16, 185, 129, 0.5) 50%, rgba(0, 240, 255, 0.35) 65%, transparent);
+    }
+    .circuit-divider-node {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #00f0ff;
+      box-shadow: 0 0 12px #00f0ff, 0 0 24px rgba(0, 240, 255, 0.6);
+      margin: 0 16px;
+      position: relative;
+    }
+    .circuit-divider-node::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border: 1px solid rgba(0, 240, 255, 0.7);
+      border-radius: 50%;
+      animation: pulseNode 2.2s infinite ease-out;
+    }
+    @keyframes pulseNode {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+
+    /* Hero Oscilloscope Pulse */
+    .oscilloscope-canvas {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      border-radius: 4px;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+    }
+
+    /* Glowing Cybernetic Badge Accent */
+    .gradient-text {
+      background: linear-gradient(135deg, #00f0ff 0%, #38bdf8 40%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+    }
+
+    /* Terminal Glowing 3D Depth */
+    .hero-visual {
+      background: var(--code-bg);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 35px rgba(0, 240, 255, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hero-visual:hover {
+      box-shadow: 0 30px 70px -10px rgba(0, 240, 255, 0.25), 0 0 40px rgba(0, 240, 255, 0.2);
+    }
+.container {
       max-width: 1240px;
       margin: 0 auto;
       padding: 0 24px;
@@ -699,6 +799,8 @@
   </style>
 </head>
 <body>
+  <!-- 3D Interactive Electronic PCB Circuit Background Canvas -->
+  <canvas id="pcb3dCanvas"></canvas>
 
   <!-- Navigation -->
   <nav>
@@ -723,7 +825,7 @@
     <div class="container hero-grid">
       <div>
         <div class="status-pill">
-          <span class="pulse-dot"></span> Available for Embedded & Robotics Roles
+          <span class="pulse-dot"></span> Available for Embedded &amp; Robotics Roles <canvas id="heroOscilloscope" class="oscilloscope-canvas" width="64" height="16"></canvas>
         </div>
         <h1>
           Engineering <span class="gradient-text">Intelligent Hardware</span> & Autonomous Systems
@@ -1970,5 +2072,392 @@ localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStr
       if (e.key === 'Escape') closeModal();
     });
   </script>
+
+  <!-- 3D Animated Electronics Background & Interactive Card Tilt Script -->
+  <script>
+    // --- 1. Real-Time Oscilloscope Waveform Generator in Hero ---
+    (function initOscilloscope() {
+      const osc = document.getElementById('heroOscilloscope');
+      if (!osc) return;
+      const ctx = osc.getContext('2d');
+      let offset = 0;
+
+      function drawOsc() {
+        ctx.clearRect(0, 0, osc.width, osc.height);
+        ctx.strokeStyle = '#00f0ff';
+        ctx.lineWidth = 1.5;
+        ctx.shadowColor = '#00f0ff';
+        ctx.shadowBlur = 6;
+        ctx.beginPath();
+
+        const w = osc.width;
+        const h = osc.height;
+        const mid = h / 2;
+
+        for (let x = 0; x < w; x++) {
+          const freq = 0.18;
+          const y = mid + Math.sin(x * freq + offset) * 5 * Math.sin((x / w) * Math.PI);
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        offset += 0.12;
+        requestAnimationFrame(drawOsc);
+      }
+      drawOsc();
+    })();
+
+    // --- 2. Interactive 3D Perspective Tilt on Project & Skill Cards ---
+    (function init3DCardTilt() {
+      const cards = document.querySelectorAll('.project-card, .skill-card, .edu-card');
+      cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const deltaX = (x - centerX) / centerX;
+          const deltaY = (y - centerY) / centerY;
+
+          const rotX = -deltaY * 5; // max 5deg tilt
+          const rotY = deltaX * 5;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-4px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+        });
+      });
+    })();
+
+    // --- 3. 3D Animated Electronics PCB Circuit Universe Engine ---
+    (function init3DPcbEngine() {
+      const canvas = document.getElementById('pcb3dCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let width = canvas.width = window.innerWidth;
+      let height = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        initCircuits();
+      });
+
+      // Mouse Parallax & Interaction
+      const mouse = { x: width / 2, y: height / 2, targetX: width / 2, targetY: height / 2, clicked: false, clickX: 0, clickY: 0 };
+      window.addEventListener('mousemove', e => {
+        mouse.targetX = e.clientX;
+        mouse.targetY = e.clientY;
+      });
+
+      window.addEventListener('click', e => {
+        createElectronsAt(e.clientX, e.clientY, 8);
+      });
+
+      // 3D Geometry: Floating IC Packages & Traces
+      const CHIP_LABELS = ['ESP32-S3', 'ROS 2', 'STM32', 'YOLOv8', 'RP2040', 'KiCad 8', 'NEO-M9N', 'DLMS'];
+      const chips = [];
+      const traces = [];
+      const vias = [];
+      const electrons = [];
+
+      function initCircuits() {
+        chips.length = 0;
+        traces.length = 0;
+        vias.length = 0;
+        electrons.length = 0;
+
+        // Generate 3D Floating IC Packages
+        const numChips = Math.min(8, Math.max(4, Math.floor(width / 240)));
+        for (let i = 0; i < numChips; i++) {
+          chips.push({
+            x: (Math.random() - 0.5) * width * 1.2,
+            y: (Math.random() - 0.5) * height * 1.5,
+            z: Math.random() * 400 - 200, // Depth
+            w: 80 + Math.random() * 30,
+            h: 60 + Math.random() * 20,
+            rotZ: (Math.random() - 0.5) * 0.4,
+            rotSpeed: (Math.random() - 0.5) * 0.003,
+            label: CHIP_LABELS[i % CHIP_LABELS.length],
+            pins: 8 + Math.floor(Math.random() * 6) * 2
+          });
+        }
+
+        // Generate Orthogonal PCB Traces with 45-degree chamfers
+        const cols = Math.floor(width / 90);
+        const rows = Math.floor(height / 90);
+        
+        for (let r = 0; r < rows; r++) {
+          for (let c = 0; c < cols; c++) {
+            if (Math.random() > 0.4) continue;
+            const x1 = c * 90 + (Math.random() * 20 - 10);
+            const y1 = r * 90 + (Math.random() * 20 - 10);
+            const z = Math.random() * 300 - 150;
+
+            // Pick a direction: 0 (horiz), 1 (vert), 2 (45-deg corner)
+            const type = Math.floor(Math.random() * 3);
+            let x2 = x1, y2 = y1, x3 = x1, y3 = y1;
+
+            if (type === 0) {
+              x2 = x1 + (Math.random() > 0.5 ? 90 : -90);
+            } else if (type === 1) {
+              y2 = y1 + (Math.random() > 0.5 ? 90 : -90);
+            } else {
+              x2 = x1 + 45;
+              y2 = y1 + 45;
+              x3 = x2 + (Math.random() > 0.5 ? 60 : -60);
+              y3 = y2;
+            }
+
+            const color = Math.random() > 0.35 ? '#00f0ff' : (Math.random() > 0.5 ? '#10b981' : '#f59e0b');
+            const trace = { x1, y1, x2, y2, x3, y3, z, type, color, alpha: 0.12 + Math.random() * 0.18 };
+            traces.push(trace);
+
+            // Add Via Nodes at trace endpoints
+            if (Math.random() > 0.5) {
+              vias.push({ x: x1, y: y1, z, color, r: 2.5 + Math.random() * 1.5, pulse: Math.random() * Math.PI });
+            }
+          }
+        }
+
+        // Spawn initial traveling energy electrons
+        for (let i = 0; i < 35; i++) {
+          spawnRandomElectron();
+        }
+      }
+
+      function spawnRandomElectron() {
+        if (traces.length === 0) return;
+        const trace = traces[Math.floor(Math.random() * traces.length)];
+        electrons.push({
+          trace: trace,
+          progress: Math.random(),
+          speed: 0.004 + Math.random() * 0.009,
+          color: trace.color,
+          size: 2.2 + Math.random() * 1.5,
+          life: 1.0
+        });
+      }
+
+      function createElectronsAt(x, y, count) {
+        for (let i = 0; i < count; i++) {
+          if (traces.length === 0) return;
+          // find nearest trace
+          const nearest = traces.reduce((closest, t) => {
+            const d = Math.hypot(t.x1 - x, t.y1 - y);
+            return d < closest.d ? { trace: t, d } : closest;
+          }, { trace: traces[0], d: 999999 }).trace;
+
+          electrons.push({
+            trace: nearest,
+            progress: 0,
+            speed: 0.012 + Math.random() * 0.015,
+            color: '#00f0ff',
+            size: 3.5,
+            life: 1.2
+          });
+        }
+      }
+
+      initCircuits();
+
+      // Camera Perspective Transform
+      let rotCamX = 0;
+      let rotCamY = 0;
+
+      function render() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Smooth camera tilt towards mouse
+        mouse.x += (mouse.targetX - mouse.x) * 0.05;
+        mouse.y += (mouse.targetY - mouse.y) * 0.05;
+
+        const targetCamX = ((mouse.y - height / 2) / height) * 0.18;
+        const targetCamY = -((mouse.x - width / 2) / width) * 0.18;
+        rotCamX += (targetCamX - rotCamX) * 0.04;
+        rotCamY += (targetCamY - rotCamY) * 0.04;
+
+        const fov = 700;
+
+        function project3D(x, y, z) {
+          // Centered 3D coordinates
+          let cx = x - width / 2;
+          let cy = y - height / 2;
+          let cz = z;
+
+          // Rotate around X
+          let y1 = cy * Math.cos(rotCamX) - cz * Math.sin(rotCamX);
+          let z1 = cy * Math.sin(rotCamX) + cz * Math.cos(rotCamX);
+
+          // Rotate around Y
+          let x2 = cx * Math.cos(rotCamY) + z1 * Math.sin(rotCamY);
+          let z2 = -cx * Math.sin(rotCamY) + z1 * Math.cos(rotCamY);
+
+          const scale = fov / (fov + z2 + 300);
+          return {
+            x: x2 * scale + width / 2,
+            y: y1 * scale + height / 2,
+            scale: Math.max(0.1, scale),
+            visible: (fov + z2 + 300) > 10
+          };
+        }
+
+        // 1. Draw 3D PCB Traces
+        ctx.lineWidth = 1.2;
+        traces.forEach(t => {
+          const p1 = project3D(t.x1, t.y1, t.z);
+          const p2 = project3D(t.x2, t.y2, t.z);
+          if (!p1.visible || !p2.visible) return;
+
+          ctx.strokeStyle = t.color;
+          ctx.globalAlpha = t.alpha * p1.scale;
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          if (t.type === 2) {
+            const p3 = project3D(t.x3, t.y3, t.z);
+            if (p3.visible) ctx.lineTo(p3.x, p3.y);
+          }
+          ctx.stroke();
+        });
+
+        // 2. Draw 3D Via Nodes (Pulsing Rings)
+        vias.forEach(v => {
+          const p = project3D(v.x, v.y, v.z);
+          if (!p.visible) return;
+
+          v.pulse += 0.035;
+          const pulseScale = 1 + Math.sin(v.pulse) * 0.25;
+
+          ctx.globalAlpha = 0.5 * p.scale;
+          ctx.fillStyle = v.color;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, v.r * p.scale * pulseScale, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Solder via center hole
+          ctx.fillStyle = '#030712';
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, (v.r * 0.45) * p.scale, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        // 3. Draw Energetic Light Packets (Traveling Electrons)
+        for (let i = electrons.length - 1; i >= 0; i--) {
+          const e = electrons[i];
+          e.progress += e.speed;
+          if (e.progress >= 1.0) {
+            electrons.splice(i, 1);
+            spawnRandomElectron();
+            continue;
+          }
+
+          const t = e.trace;
+          let curX, curY;
+          if (t.type === 2) {
+            if (e.progress < 0.5) {
+              const subP = e.progress * 2;
+              curX = t.x1 + (t.x2 - t.x1) * subP;
+              curY = t.y1 + (t.y2 - t.y1) * subP;
+            } else {
+              const subP = (e.progress - 0.5) * 2;
+              curX = t.x2 + (t.x3 - t.x2) * subP;
+              curY = t.y2 + (t.y3 - t.y2) * subP;
+            }
+          } else {
+            curX = t.x1 + (t.x2 - t.x1) * e.progress;
+            curY = t.y1 + (t.y2 - t.y1) * e.progress;
+          }
+
+          const pt = project3D(curX, curY, t.z);
+          if (pt.visible) {
+            ctx.shadowColor = e.color;
+            ctx.shadowBlur = 10;
+            ctx.fillStyle = '#ffffff';
+            ctx.globalAlpha = 0.9 * pt.scale;
+            ctx.beginPath();
+            ctx.arc(pt.x, pt.y, e.size * pt.scale, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Glow aura
+            ctx.fillStyle = e.color;
+            ctx.globalAlpha = 0.4 * pt.scale;
+            ctx.beginPath();
+            ctx.arc(pt.x, pt.y, e.size * 2.5 * pt.scale, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
+        }
+
+        // 4. Draw Floating 3D Silicon IC Packages
+        chips.forEach(c => {
+          c.rotZ += c.rotSpeed;
+          const p = project3D(c.x + width / 2, c.y + height / 2, c.z);
+          if (!p.visible) return;
+
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(c.rotZ);
+          const sc = p.scale;
+
+          // IC Body
+          const bw = c.w * sc;
+          const bh = c.h * sc;
+          ctx.globalAlpha = 0.45 * sc;
+          ctx.fillStyle = '#081224';
+          ctx.strokeStyle = 'rgba(0, 240, 255, 0.4)';
+          ctx.lineWidth = 1.2 * sc;
+          ctx.fillRect(-bw / 2, -bh / 2, bw, bh);
+          ctx.strokeRect(-bw / 2, -bh / 2, bw, bh);
+
+          // Pin 1 Index Dot
+          ctx.fillStyle = '#00f0ff';
+          ctx.beginPath();
+          ctx.arc(-bw / 2 + 8 * sc, -bh / 2 + 8 * sc, 2.5 * sc, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Silkscreen Text
+          ctx.font = `600 ${Math.max(9, Math.floor(10 * sc))}px 'Fira Code', monospace`;
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(c.label, 0, 0);
+
+          // IC Metal Pins
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
+          const pinSpacing = bw / (c.pins / 2 + 1);
+          for (let pIdx = 1; pIdx <= c.pins / 2; pIdx++) {
+            const px = -bw / 2 + pIdx * pinSpacing;
+            // Top pins
+            ctx.beginPath();
+            ctx.moveTo(px, -bh / 2);
+            ctx.lineTo(px, -bh / 2 - 5 * sc);
+            ctx.stroke();
+            // Bottom pins
+            ctx.beginPath();
+            ctx.moveTo(px, bh / 2);
+            ctx.lineTo(px, bh / 2 + 5 * sc);
+            ctx.stroke();
+          }
+
+          ctx.restore();
+        });
+
+        ctx.globalAlpha = 1.0;
+        requestAnimationFrame(render);
+      }
+
+      render();
+    })();
+  </script>
+
 </body>
 </html>
