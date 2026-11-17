@@ -261,9 +261,10 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 40px;
-      align-items: center;
+      grid-template-columns: 1fr;
+      max-width: 860px;
+      margin: 0 auto;
+      gap: 32px;
     }
 
     .status-pill {
@@ -357,6 +358,7 @@
     .hero-actions {
       display: flex;
       gap: 16px;
+      flex-wrap: wrap;
     }
 
     .btn-primary {
@@ -1603,40 +1605,8 @@
 
         <div class="hero-actions">
           <a href="#projects" class="btn-primary">Explore Projects</a>
+          <a href="#freelance" class="btn-primary" style="background:linear-gradient(135deg, #f59e0b, #d97706); color:#050b17; border-color:#f59e0b; box-shadow:0 4px 15px rgba(245,158,11,0.35);">⚡ Hire / Freelance Card</a>
           <a href="PORTFOLIO.md" target="_blank" class="btn-secondary">View Markdown CV</a>
-        </div>
-      </div>
-
-      <!-- Live Terminal / Hardware Spec Card -->
-      <div class="hero-visual">
-        <div class="terminal-header">
-          <div class="dot dot-red"></div>
-          <div class="dot dot-yellow"></div>
-          <div class="dot dot-green"></div>
-          <span class="terminal-title">kirthan@hardware-lab:~$ ./diagnostics.sh</span>
-        </div>
-        <div class="terminal-body">
-          <p class="cmd-line">&gt; probing active hardware architectures...</p>
-          <p class="cmd-out">CPU/MCU : <span class="highlight-green">ESP32-S3 | ESP32 | STM32 | Raspberry Pi 4</span>
-          </p>
-          <p class="cmd-out">MIDDLEWARE: <span class="highlight-green">ROS2 Humble (Nav2 Stack) &amp; micro-ROS</span>
-          </p>
-          <p class="cmd-out">EDA &amp; CNC : <span class="highlight-green">KiCad, Gerber/Excellon G-code Plotter</span>
-          </p>
-          <p class="cmd-out">PROTOCOLS : <span class="highlight-green">Modbus RTU/TCP, DLMS, RS-485, Mutual-TLS</span>
-          </p>
-          <p class="cmd-out">SENSING : <span class="highlight-green">NEO-M9N GNSS, BNO055 9-DOF, YDLiDAR, YOLOv8</span>
-          </p>
-          <p class="cmd-line" style="margin-top: 10px;">&gt; checking patent &amp; fellowship portfolio...</p>
-          <p class="cmd-out">[OK] <span class="highlight-amber">FidoFeed Patent Complete Spec &amp; 7 CAD
-              Drawings</span></p>
-          <p class="cmd-out">[OK] <span class="highlight-amber">FARMITOPIA Raker Robot (Hybrid ROS2 + ESP32-S3)</span>
-          </p>
-          <p class="cmd-out">[OK] <span class="highlight-amber">Smart Blind Stick (YOLOv8 + Haptic + GPS
-              Turn-by-Turn)</span></p>
-          <p class="cmd-out">[OK] <span class="highlight-green">URF-II Seed Grant Fellow | Hackathon 2nd Place</span>
-          </p>
-          <p class="cmd-line" style="margin-top: 10px;">&gt; ready for deployment_</p>
         </div>
       </div>
     </div>
