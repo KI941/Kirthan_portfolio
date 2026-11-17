@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="theme-color" content="#030712">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
   <title>Kirthan K M | Electronics, Embedded Systems & Robotics Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -789,14 +793,196 @@
     }
     .footer-links a:hover { color: var(--accent-cyan); }
 
-    @media (max-width: 768px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .stats-bar { grid-template-columns: repeat(2, 1fr); }
-      .stat-item:nth-child(2) { border-right: none; }
-      .nav-links { display: none; }
-      h1 { font-size: 2.2rem; }
+    
+    /* --- iOS & Android Mobile Optimization Suite --- */
+    :root {
+      --sat: env(safe-area-inset-top, 0px);
+      --sab: env(safe-area-inset-bottom, 0px);
+      --sal: env(safe-area-inset-left, 0px);
+      --sar: env(safe-area-inset-right, 0px);
     }
-  </style>
+
+    body {
+      padding-top: var(--sat);
+      padding-bottom: var(--sab);
+      padding-left: var(--sal);
+      padding-right: var(--sar);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Video player mobile standards */
+    video {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* Filter button smooth horizontal swipe on touch devices */
+    .filter-container {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+      scrollbar-width: none;
+    }
+    .filter-container::-webkit-scrollbar {
+      display: none;
+    }
+    .filter-btn {
+      white-space: nowrap;
+      flex-shrink: 0;
+      min-height: 42px;
+      padding: 8px 18px;
+      touch-action: manipulation;
+    }
+
+    /* Mobile Quick Navigation Bar */
+    .mobile-quick-nav {
+      display: none;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      gap: 8px;
+      padding: 10px 16px;
+      background: rgba(3, 7, 18, 0.95);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+      scrollbar-width: none;
+    }
+    .mobile-quick-nav::-webkit-scrollbar { display: none; }
+    .mobile-nav-pill {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(16, 26, 48, 0.8);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #94a3b8;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      display: inline-block;
+    }
+    .mobile-nav-pill:active, .mobile-nav-pill:hover {
+      background: rgba(0, 240, 255, 0.15);
+      border-color: var(--accent-cyan);
+      color: #fff;
+    }
+
+    /* Breakpoint: Tablets & Mobile Phones (<= 900px) */
+    @media (max-width: 900px) {
+      .container { padding: 0 16px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .freelance-container { grid-template-columns: 1fr; gap: 36px; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .stat-item { border-right: none; }
+      .stat-item:nth-child(odd) { border-right: 1px solid var(--border-color); }
+      .skills-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; gap: 24px; }
+      .edu-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Breakpoint: Mobile Phones (<= 768px) */
+    @media (max-width: 768px) {
+      .mobile-quick-nav { display: flex; }
+      .nav-links { display: none; }
+      nav { padding: 12px 0; }
+      .brand { font-size: 1.1rem; }
+      .btn-contact { padding: 8px 14px; font-size: 0.8rem; }
+
+      h1 { font-size: 2.1rem; line-height: 1.25; }
+      .hero-subtitle { font-size: 0.95rem; }
+      
+      .hero-contact-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .contact-item { width: 100%; font-size: 0.85rem; }
+      
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+      }
+      .hero-actions .btn-primary, .hero-actions .btn-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        min-height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* 3D Business Card Phone Responsive */
+      .card-3d-wrapper {
+        height: auto;
+        min-height: 330px;
+        max-width: 100%;
+      }
+      .card-face {
+        padding: 20px 18px;
+      }
+      .card-face h3 {
+        font-size: 1.25rem !important;
+      }
+      .emv-chip {
+        width: 42px;
+        height: 32px;
+      }
+      .freelance-services-list {
+        grid-template-columns: 1fr;
+      }
+      .btn-client-action {
+        width: 100%;
+        min-height: 48px;
+      }
+
+      /* Modal Mobile Optimization */
+      .modal-overlay {
+        padding: 12px;
+        align-items: flex-end; /* Sheet style on mobile */
+      }
+      .modal-content {
+        max-height: 88vh;
+        width: 100%;
+        border-radius: 16px 16px 8px 8px;
+        padding: 22px 16px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .modal-close {
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+      }
+      .gallery-thumbs {
+        gap: 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .gallery-thumb-item {
+        width: 64px;
+        height: 48px;
+        flex-shrink: 0;
+      }
+    }
+
+    /* Breakpoint: Small Mobile (<= 400px - iPhone SE, Galaxy A series) */
+    @media (max-width: 400px) {
+      h1 { font-size: 1.85rem; }
+      .brand-badge { font-size: 0.65rem; padding: 2px 6px; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .stat-item:nth-child(odd) { border-right: none; border-bottom: 1px solid var(--border-color); }
+      .card-3d-wrapper { min-height: 360px; }
+    }
+
+</style>
 </head>
 <body>
   <!-- 3D Interactive Electronic PCB Circuit Background Canvas -->
@@ -811,6 +997,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#freelance">Freelance Card</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -819,6 +1006,16 @@
       <a href="mailto:kirthankalburgi8684@gmail.com" class="btn-contact">Contact Me</a>
     </div>
   </nav>
+
+  <!-- Mobile Quick Navigation Bar (Touch Optimized for iOS & Android) -->
+  <div class="mobile-quick-nav">
+    <a href="#about" class="mobile-nav-pill">About</a>
+    <a href="#freelance" class="mobile-nav-pill">⚡ Freelance Card</a>
+    <a href="#projects" class="mobile-nav-pill">🚀 Projects</a>
+    <a href="#skills" class="mobile-nav-pill">🛠️ Skills</a>
+    <a href="#education" class="mobile-nav-pill">🎓 Credentials</a>
+  </div>
+
 
   <!-- Hero Section -->
   <section class="hero" id="about">
@@ -906,6 +1103,154 @@
       </div>
     </div>
   </div>
+
+  
+  <!-- Section: Freelance Services & Interactive 3D Business Card -->
+  <section id="freelance" class="freelance-section">
+    <div class="container">
+      <div class="circuit-divider">
+        <div class="circuit-divider-line"></div>
+        <div class="circuit-divider-node"></div>
+        <div class="circuit-divider-line"></div>
+      </div>
+
+      <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+        <span class="section-tag">// Client Services &amp; Hardware Consulting</span>
+        <h2 class="section-title">Freelance Engineering &amp; Turnkey Development</h2>
+        <p class="section-desc" style="margin: 0 auto;">Partner with an agile electronics architect for turnkey PCB layout, production firmware, ROS 2 autonomous robotics bring-up, and rapid prototyping.</p>
+      </div>
+
+      <div class="freelance-container">
+        <!-- Column 1: Interactive 3D Holographic Business Card -->
+        <div>
+          <div class="card-3d-wrapper" id="businessCardWrapper" onclick="toggleCardFlip()">
+            <div class="card-3d-inner" id="businessCardInner">
+              
+              <!-- Front Face: Gold ENIG Circuit Board Card -->
+              <div class="card-face card-front">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                  <div class="emv-chip">
+                    <div class="emv-line"></div>
+                    <div class="emv-line"></div>
+                    <div class="emv-line"></div>
+                    <div class="emv-line"></div>
+                  </div>
+                  <div style="text-align:right;">
+                    <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--accent-amber); display:block; font-weight:700; letter-spacing:0.5px;">PCB ID: KM-2026-ENG</span>
+                    <span style="font-family:var(--font-mono); font-size:0.65rem; color:#94a3b8;">ENIG GOLD 2-LAYER • JLCPCB/PCBWay READY</span>
+                  </div>
+                </div>
+
+                <div style="margin: 14px 0 8px 0;">
+                  <h3 style="color:#ffffff; font-size:1.45rem; font-weight:800; letter-spacing:0.5px; margin-bottom:2px;">KIRTHAN K M</h3>
+                  <p style="color:var(--accent-cyan); font-family:var(--font-mono); font-size:0.82rem; font-weight:600;">Embedded Systems &amp; Robotics Consultant</p>
+                </div>
+
+                <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:10px 14px; margin-bottom:8px;">
+                  <p style="font-size:0.78rem; color:#cbd5e1; line-height:1.45; font-family:var(--font-mono);">
+                    &gt; PCB Schematics &amp; Multi-layer Routing (KiCad)<br>
+                    &gt; ESP32-S3 / STM32 Firmware &amp; micro-ROS<br>
+                    &gt; ROS 2 Humble LiDAR SLAM &amp; Nav2 Mobile Bases<br>
+                    &gt; YOLOv8 Edge AI Vision &amp; Assistive Devices
+                  </p>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="color:#10b981; font-family:var(--font-mono); font-size:0.75rem; font-weight:600;">
+                    <span class="pulse-dot" style="display:inline-block; margin-right:4px;"></span> Available for Global Contracts
+                  </span>
+                  <span class="flip-hint">⟲ Click to Flip Card</span>
+                </div>
+              </div>
+
+              <!-- Back Face: Direct Contact Hub & Digital Channels -->
+              <div class="card-face card-back">
+                <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:10px;">
+                  <div>
+                    <h4 style="color:#fff; font-size:1.1rem; font-weight:700;">Direct Contact Channels</h4>
+                    <span style="color:var(--accent-cyan); font-family:var(--font-mono); font-size:0.72rem;">Rapid Client Response &lt; 12 Hours</span>
+                  </div>
+                  <span class="flip-hint">⟲ Flip Front</span>
+                </div>
+
+                <div style="margin: 12px 0; display:flex; flex-direction:column; gap:8px; font-size:0.82rem; font-family:var(--font-mono);">
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="color:var(--accent-amber);">✉️ Email:</span>
+                    <a href="mailto:kirthankalburgi8684@gmail.com" style="color:#f8fafc; text-decoration:none;">kirthankalburgi8684@gmail.com</a>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="color:var(--accent-emerald);">📞 Phone / WhatsApp:</span>
+                    <a href="https://wa.me/918618885273?text=Hi%20Kirthan,%20I%20would%20like%20to%20discuss%20a%20hardware/embedded%20project" target="_blank" style="color:#f8fafc; text-decoration:none;">+91 8618885273</a>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="color:var(--accent-blue);">🔗 LinkedIn:</span>
+                    <a href="https://www.linkedin.com/in/kirthan-k-m-81a122308/" target="_blank" style="color:#f8fafc; text-decoration:none;">kirthan-k-m-81a122308</a>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="color:#a855f7;">📍 Location:</span>
+                    <span style="color:#cbd5e1;">Bangalore, India (Remote Worldwide)</span>
+                  </div>
+                </div>
+
+                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                  <button class="btn-client-action btn-vcard" onclick="event.stopPropagation(); downloadVCard()">
+                    <span>📇</span> Save Contact (.vcf)
+                  </button>
+                  <a href="https://wa.me/918618885273?text=Hi%20Kirthan,%20I%20would%20like%20to%20hire%20you%20for%20a%20project" target="_blank" class="btn-client-action btn-whatsapp" onclick="event.stopPropagation()">
+                    <span>💬</span> Chat WhatsApp
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <p style="text-align:center; font-family:var(--font-mono); color:var(--text-muted); font-size:0.75rem; margin-top:12px;">
+            Interactive 3D Holographic PCB Business Card • Click card or button to rotate
+          </p>
+        </div>
+
+        <!-- Column 2: Freelance Services & Workflow Breakdown -->
+        <div>
+          <span style="color:var(--accent-amber); font-family:var(--font-mono); font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:1px;">Client Collaboration Framework</span>
+          <h3 style="color:#fff; font-size:1.5rem; margin: 4px 0 10px 0;">How I Accelerate Your Hardware Milestones</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.5;">
+            Whether you are a startup needing an MVP or an enterprise scaling an industrial IoT product, I provide end-to-end engineering from architectural schematics to fabrication and field debugging.
+          </p>
+
+          <div class="freelance-services-list">
+            <div class="service-mini-card">
+              <h4><span>📐</span> Custom PCB Design</h4>
+              <p>Schematic capture, multi-layer routing, high-voltage AC creepage slots, BOM selection, and Gerber packages ready for JLCPCB.</p>
+            </div>
+
+            <div class="service-mini-card">
+              <h4><span>⚡</span> Embedded Firmware</h4>
+              <p>Production C/C++ firmware on ESP32-S3, STM32, ESP-IDF, FreeRTOS, Mutual-TLS telemetry, Modbus RTU, and OTA updates.</p>
+            </div>
+
+            <div class="service-mini-card">
+              <h4><span>🤖</span> Autonomous Robotics</h4>
+              <p>ROS 2 Humble Nav2 stack bring-up, 2D LiDAR SLAM, REP-105 coordinate trees, motor drive kinematics, and micro-ROS bridge.</p>
+            </div>
+
+            <div class="service-mini-card">
+              <h4><span>🔬</span> Board Diagnostics &amp; Rework</h4>
+              <p>Oscilloscope power rail tracing, schematic net isolation (OpenBoardView), SMD micro-soldering, and rapid prototype turnarounds.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="mailto:kirthankalburgi8684@gmail.com?subject=Project%20Inquiry%20-%20Embedded%20Engineering&body=Hi%20Kirthan,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20involving:%0D%0A-%20Project%20Type:%20[PCB%20/%20Firmware%20/%20Robotics]%0D%0A-%20Target%20Timeline:%0D%0A-%20Brief%20Description:%0D%0A%0D%0ABest%20regards," class="btn-client-action btn-inquire">
+              <span>🚀</span> Start Project Inquiry
+            </a>
+            <button class="btn-client-action btn-vcard" onclick="downloadVCard()">
+              <span>📥</span> Download vCard
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Technical Skills Section -->
   <section id="skills">
@@ -1990,7 +2335,7 @@ localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStr
                     <span style="color:#f8fafc; font-weight:600; font-size:0.92rem;">${v.title}</span>
                     <span style="background:rgba(56,189,248,0.15); color:#38bdf8; font-family:var(--font-mono); font-size:0.75rem; padding:2px 8px; border-radius:4px;">MP4 HD</span>
                   </div>
-                  <video controls preload="metadata" style="width:100%; max-height:460px; border-radius:8px; background:#000;">
+                  <video controls playsinline webkit-playsinline preload="metadata" style="width:100%; max-height:460px; border-radius:8px; background:#000;">
                     <source src="${v.src}" type="video/mp4">
                     ${v.fallback ? `<source src="${v.fallback}" type="video/mp4">` : ''}
                     Your browser does not support HTML5 video.
@@ -2006,7 +2351,7 @@ localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStr
             <h4 style="color:#38bdf8; font-size:0.95rem; margin-bottom:10px; display:flex; align-items:center; gap:8px;">
               <span>▶️</span> Live Hardware &amp; AI Turn-by-Turn Video Demonstration
             </h4>
-            <video controls preload="metadata" style="width:100%; max-height:420px; border-radius:6px; background:#000;">
+            <video controls playsinline webkit-playsinline preload="metadata" style="width:100%; max-height:420px; border-radius:6px; background:#000;">
               <source src="${data.video}" type="video/mp4">
               Your browser does not support the video tag.
             </video>

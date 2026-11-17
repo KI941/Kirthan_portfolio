@@ -13,6 +13,30 @@ Lead developer across industry-grade projects including **FARMITOPIA** (Autonomo
 
 ---
 
+---
+
+## 🤝 Freelance Engineering Services & Hardware Consulting
+*Available for worldwide remote contracts, custom hardware development, and on-site engineering in Bangalore.*
+
+- **1. Turnkey Custom PCB Design & Rapid Prototyping**:
+  - Full-cycle schematic capture, multi-layer PCB layout routing in KiCad 8.0, component selection, BOM optimization, and Design for Manufacturing (DFM/DRC).
+  - High-voltage AC mains isolation milling slots, creepage clearance, and production-ready Gerber RS-274X / Excellon packages formatted for JLCPCB, PCBWay, and local fabs.
+- **2. Embedded Firmware & IoT Cloud Systems**:
+  - Production-grade C/C++ firmware on ESP32-S3, ESP32, STM32 (ARM Cortex-M), and Raspberry Pi SBCs.
+  - ESP-IDF, FreeRTOS multi-tasking, Mutual-TLS encrypted MQTT (AWS IoT Core), Modbus RTU/TCP, DLMS/COSEM, BLE, and cellular IoT (SIM800C / SIM7080G).
+- **3. Autonomous Mobile Robotics & ROS 2 Integration**:
+  - ROS 2 Humble Nav2 stack bring-up, 2D LiDAR SLAM mapping (GMapping / Cartographer), REP-105 coordinate frame trees (map -> odom -> base_link -> laser_frame), differential drive kinematics, and micro-ROS MCU bridging.
+- **4. Component-Level Hardware Diagnostics & Micro-Soldering**:
+  - Root-cause board failure analysis, OpenBoardView schematic tracing, oscilloscope power rail signal debugging, and stereo microscope SMD micro-soldering / trace repair.
+
+**Direct Client Contact Channels**:
+- ✉️ **Email**: [kirthankalburgi8684@gmail.com](mailto:kirthankalburgi8684@gmail.com)
+- 📱 **Phone / WhatsApp**: [+91 8618885273](https://wa.me/918618885273?text=Hi%20Kirthan,%20I%20would%20like%20to%20discuss%20a%20hardware/embedded%20project)
+- 💼 **LinkedIn**: [linkedin.com/in/kirthan-k-m-81a122308](https://www.linkedin.com/in/kirthan-k-m-81a122308/)
+- 🌐 **Interactive Portfolio**: [https://ki941.github.io/Kirthan_portfolio/](https://ki941.github.io/Kirthan_portfolio/)
+
+---
+
 ## 🛠️ Technical Skills Matrix
 
 | Domain | Tools & Technologies |
