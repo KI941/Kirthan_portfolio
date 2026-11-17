@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
@@ -10,9 +11,10 @@
   <title>Kirthan K M | Electronics, Embedded Systems & Robotics Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
-    
     :root {
       --bg-primary: #030712;
       --bg-secondary: #081026;
@@ -54,7 +56,9 @@
     }
 
     /* 3D Glassmorphism & Interactive Tilt for Cards */
-    .project-card, .skill-card, .edu-card {
+    .project-card,
+    .skill-card,
+    .edu-card {
       position: relative;
       background: var(--bg-card);
       backdrop-filter: blur(18px);
@@ -66,7 +70,9 @@
       overflow: hidden;
     }
 
-    .project-card::before, .skill-card::before, .edu-card::before {
+    .project-card::before,
+    .skill-card::before,
+    .edu-card::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -77,7 +83,9 @@
       transition: opacity 0.3s ease;
     }
 
-    .project-card:hover::before, .skill-card:hover::before, .edu-card:hover::before {
+    .project-card:hover::before,
+    .skill-card:hover::before,
+    .edu-card:hover::before {
       opacity: 1;
     }
 
@@ -96,11 +104,13 @@
       margin: 48px 0;
       position: relative;
     }
+
     .circuit-divider-line {
       height: 1px;
       flex: 1;
       background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.35) 35%, rgba(16, 185, 129, 0.5) 50%, rgba(0, 240, 255, 0.35) 65%, transparent);
     }
+
     .circuit-divider-node {
       width: 10px;
       height: 10px;
@@ -110,6 +120,7 @@
       margin: 0 16px;
       position: relative;
     }
+
     .circuit-divider-node::before {
       content: '';
       position: absolute;
@@ -118,9 +129,17 @@
       border-radius: 50%;
       animation: pulseNode 2.2s infinite ease-out;
     }
+
     @keyframes pulseNode {
-      0% { transform: scale(0.8); opacity: 1; }
-      100% { transform: scale(2.4); opacity: 0; }
+      0% {
+        transform: scale(0.8);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(2.4);
+        opacity: 0;
+      }
     }
 
     /* Hero Oscilloscope Pulse */
@@ -150,10 +169,12 @@
       box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 35px rgba(0, 240, 255, 0.15);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .hero-visual:hover {
       box-shadow: 0 30px 70px -10px rgba(0, 240, 255, 0.25), 0 0 40px rgba(0, 240, 255, 0.2);
     }
-.container {
+
+    .container {
       max-width: 1240px;
       margin: 0 auto;
       padding: 0 24px;
@@ -169,11 +190,13 @@
       padding: 16px 0;
       transition: all 0.3s ease;
     }
+
     .nav-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+
     .brand {
       display: flex;
       align-items: center;
@@ -184,6 +207,7 @@
       color: #fff;
       text-decoration: none;
     }
+
     .brand-badge {
       background: linear-gradient(135deg, var(--accent-cyan), var(--accent-emerald));
       color: #070b14;
@@ -193,11 +217,13 @@
       border-radius: 4px;
       font-family: var(--font-mono);
     }
+
     .nav-links {
       display: flex;
       gap: 24px;
       list-style: none;
     }
+
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
@@ -205,7 +231,11 @@
       font-weight: 500;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--accent-cyan); }
+
+    .nav-links a:hover {
+      color: var(--accent-cyan);
+    }
+
     .btn-contact {
       background: rgba(0, 242, 254, 0.1);
       border: 1px solid var(--accent-cyan);
@@ -217,6 +247,7 @@
       font-weight: 600;
       transition: all 0.25s;
     }
+
     .btn-contact:hover {
       background: var(--accent-cyan);
       color: #070b14;
@@ -227,12 +258,14 @@
       padding: 70px 0 50px;
       position: relative;
     }
+
     .hero-grid {
       display: grid;
       grid-template-columns: 1.25fr 0.75fr;
       gap: 40px;
       align-items: center;
     }
+
     .status-pill {
       display: inline-flex;
       align-items: center;
@@ -246,6 +279,7 @@
       font-family: var(--font-mono);
       margin-bottom: 20px;
     }
+
     .pulse-dot {
       width: 8px;
       height: 8px;
@@ -254,11 +288,24 @@
       box-shadow: 0 0 8px var(--accent-emerald);
       animation: pulse 1.8s infinite;
     }
+
     @keyframes pulse {
-      0% { transform: scale(0.95); opacity: 0.7; }
-      50% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(0.95); opacity: 0.7; }
+      0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.95);
+        opacity: 0.7;
+      }
     }
+
     h1 {
       font-size: 3.1rem;
       font-weight: 800;
@@ -266,17 +313,20 @@
       letter-spacing: -1px;
       margin-bottom: 16px;
     }
+
     .gradient-text {
       background: linear-gradient(135deg, #ffffff 20%, var(--accent-cyan) 75%, var(--accent-emerald) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     .hero-subtitle {
       font-size: 1.12rem;
       color: var(--text-muted);
       margin-bottom: 28px;
       max-width: 620px;
     }
+
     .hero-contact-row {
       display: flex;
       flex-wrap: wrap;
@@ -285,6 +335,7 @@
       font-size: 0.88rem;
       font-family: var(--font-mono);
     }
+
     .contact-item {
       display: flex;
       align-items: center;
@@ -297,11 +348,17 @@
       text-decoration: none;
       transition: all 0.2s;
     }
+
     .contact-item:hover {
       border-color: var(--accent-cyan);
       color: var(--accent-cyan);
     }
-    .hero-actions { display: flex; gap: 16px; }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+    }
+
     .btn-primary {
       background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
       color: #070b14;
@@ -312,10 +369,12 @@
       transition: all 0.25s;
       box-shadow: 0 4px 20px rgba(0, 242, 254, 0.25);
     }
+
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 25px rgba(0, 242, 254, 0.4);
     }
+
     .btn-secondary {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -326,6 +385,7 @@
       text-decoration: none;
       transition: all 0.25s;
     }
+
     .btn-secondary:hover {
       background: rgba(255, 255, 255, 0.1);
       border-color: var(--accent-cyan);
@@ -338,6 +398,7 @@
       padding: 24px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
+
     .terminal-header {
       display: flex;
       align-items: center;
@@ -346,26 +407,56 @@
       padding-bottom: 12px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .dot { width: 10px; height: 10px; border-radius: 50%; }
-    .dot-red { background: #ef4444; }
-    .dot-yellow { background: #f59e0b; }
-    .dot-green { background: #10b981; }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-red {
+      background: #ef4444;
+    }
+
+    .dot-yellow {
+      background: #f59e0b;
+    }
+
+    .dot-green {
+      background: #10b981;
+    }
+
     .terminal-title {
       font-size: 0.78rem;
       font-family: var(--font-mono);
       color: var(--text-muted);
       margin-left: 8px;
     }
+
     .terminal-body {
       font-family: var(--font-mono);
       font-size: 0.8rem;
       color: #94a3b8;
       line-height: 1.65;
     }
-    .cmd-line { color: var(--accent-cyan); }
-    .cmd-out { color: #cbd5e1; padding-left: 10px; }
-    .highlight-green { color: var(--accent-emerald); font-weight: 600; }
-    .highlight-amber { color: var(--accent-amber); }
+
+    .cmd-line {
+      color: var(--accent-cyan);
+    }
+
+    .cmd-out {
+      color: #cbd5e1;
+      padding-left: 10px;
+    }
+
+    .highlight-green {
+      color: var(--accent-emerald);
+      font-weight: 600;
+    }
+
+    .highlight-amber {
+      color: var(--accent-amber);
+    }
 
     .stats-bar {
       margin: 40px 0 70px;
@@ -378,11 +469,16 @@
       gap: 20px;
       text-align: center;
     }
+
     .stat-item {
       border-right: 1px solid rgba(255, 255, 255, 0.06);
       padding: 0 10px;
     }
-    .stat-item:last-child { border-right: none; }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
     .stat-num {
       font-size: 2.2rem;
       font-weight: 800;
@@ -394,6 +490,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     .stat-label {
       font-size: 0.78rem;
       text-transform: uppercase;
@@ -402,8 +499,15 @@
       font-weight: 600;
     }
 
-    section { padding: 60px 0; }
-    .section-header { margin-bottom: 40px; text-align: center; }
+    section {
+      padding: 60px 0;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
     .section-tag {
       font-family: var(--font-mono);
       font-size: 0.8rem;
@@ -413,7 +517,13 @@
       margin-bottom: 8px;
       display: block;
     }
-    .section-title { font-size: 2.2rem; font-weight: 800; color: #fff; }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
     .section-desc {
       color: var(--text-muted);
       max-width: 700px;
@@ -426,6 +536,7 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
+
     .skill-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -433,14 +544,32 @@
       padding: 24px;
       transition: all 0.3s;
     }
+
     .skill-card:hover {
       border-color: var(--border-hover);
       transform: translateY(-3px);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     }
-    .skill-card-icon { font-size: 1.8rem; margin-bottom: 14px; display: inline-block; }
-    .skill-card h3 { font-size: 1.1rem; color: #fff; margin-bottom: 12px; font-weight: 700; }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .skill-card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .skill-card h3 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
     .skill-pill {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -458,6 +587,7 @@
       flex-wrap: wrap;
       margin-bottom: 35px;
     }
+
     .filter-btn {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -469,7 +599,9 @@
       cursor: pointer;
       transition: all 0.25s;
     }
-    .filter-btn:hover, .filter-btn.active {
+
+    .filter-btn:hover,
+    .filter-btn.active {
       background: var(--accent-cyan);
       color: #070b14;
       border-color: var(--accent-cyan);
@@ -481,6 +613,7 @@
       grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
       gap: 24px;
     }
+
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -490,11 +623,13 @@
       flex-direction: column;
       transition: all 0.3s;
     }
+
     .project-card:hover {
       border-color: var(--border-hover);
       transform: translateY(-4px);
       box-shadow: 0 12px 30px rgba(0, 242, 254, 0.1);
     }
+
     .project-img-wrapper {
       height: 200px;
       background: #0b1325;
@@ -505,13 +640,18 @@
       justify-content: center;
       border-bottom: 1px solid var(--border-color);
     }
+
     .project-img-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.4s;
     }
-    .project-card:hover .project-img-wrapper img { transform: scale(1.05); }
+
+    .project-card:hover .project-img-wrapper img {
+      transform: scale(1.05);
+    }
+
     .project-badge-overlay {
       position: absolute;
       top: 12px;
@@ -526,12 +666,14 @@
       color: var(--accent-cyan);
       font-weight: 600;
     }
+
     .project-content {
       padding: 22px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
+
     .project-category {
       font-size: 0.72rem;
       font-family: var(--font-mono);
@@ -539,6 +681,7 @@
       text-transform: uppercase;
       margin-bottom: 6px;
     }
+
     .project-title {
       font-size: 1.25rem;
       font-weight: 700;
@@ -546,6 +689,7 @@
       margin-bottom: 10px;
       line-height: 1.3;
     }
+
     .project-desc {
       font-size: 0.88rem;
       color: var(--text-muted);
@@ -553,12 +697,14 @@
       line-height: 1.55;
       flex-grow: 1;
     }
+
     .project-tech {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       margin-bottom: 18px;
     }
+
     .tech-tag {
       background: rgba(56, 189, 248, 0.08);
       border: 1px solid rgba(56, 189, 248, 0.2);
@@ -568,6 +714,7 @@
       padding: 3px 8px;
       border-radius: 4px;
     }
+
     .project-actions {
       display: flex;
       justify-content: space-between;
@@ -575,6 +722,7 @@
       padding-top: 14px;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
+
     .btn-view-details {
       background: none;
       border: none;
@@ -587,13 +735,18 @@
       gap: 5px;
       transition: gap 0.2s;
     }
-    .btn-view-details:hover { gap: 8px; color: #fff; }
+
+    .btn-view-details:hover {
+      gap: 8px;
+      color: #fff;
+    }
 
     .timeline {
       position: relative;
       max-width: 950px;
       margin: 0 auto;
     }
+
     .timeline::before {
       content: '';
       position: absolute;
@@ -603,11 +756,13 @@
       width: 2px;
       background: linear-gradient(180deg, var(--accent-cyan), var(--accent-emerald), transparent);
     }
+
     .timeline-item {
       position: relative;
       padding-left: 55px;
       margin-bottom: 40px;
     }
+
     .timeline-dot {
       position: absolute;
       left: 14px;
@@ -619,37 +774,52 @@
       border-radius: 50%;
       box-shadow: 0 0 10px var(--accent-cyan);
     }
+
     .timeline-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 24px;
     }
+
     .timeline-date {
       font-family: var(--font-mono);
       font-size: 0.78rem;
       color: var(--accent-cyan);
       margin-bottom: 6px;
     }
-    .timeline-role { font-size: 1.25rem; font-weight: 700; color: #fff; }
+
+    .timeline-role {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
     .timeline-company {
       font-size: 0.95rem;
       color: var(--accent-emerald);
       font-weight: 600;
       margin-bottom: 12px;
     }
+
     .timeline-points {
       list-style-type: disc;
       padding-left: 18px;
       color: var(--text-muted);
       font-size: 0.9rem;
     }
-    .timeline-points li { margin-bottom: 8px; }
+
+    .timeline-points li {
+      margin-bottom: 8px;
+    }
 
     /* Modal Gallery */
     .modal-overlay {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: rgba(3, 7, 18, 0.88);
       backdrop-filter: blur(8px);
       z-index: 1000;
@@ -658,7 +828,11 @@
       justify-content: center;
       padding: 20px;
     }
-    .modal-overlay.active { display: flex; }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
     .modal-content {
       background: #0d1527;
       border: 1px solid var(--border-hover);
@@ -671,14 +845,17 @@
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
       position: relative;
     }
+
     .modal-close {
       position: absolute;
-      top: 20px; right: 20px;
+      top: 20px;
+      right: 20px;
       background: rgba(255, 255, 255, 0.08);
       border: none;
       color: #fff;
       font-size: 1.2rem;
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
@@ -686,7 +863,11 @@
       justify-content: center;
       transition: background 0.2s;
     }
-    .modal-close:hover { background: rgba(239, 68, 68, 0.5); }
+
+    .modal-close:hover {
+      background: rgba(239, 68, 68, 0.5);
+    }
+
     .modal-img-box {
       width: 100%;
       max-height: 420px;
@@ -699,7 +880,13 @@
       justify-content: center;
       align-items: center;
     }
-    .modal-img-box img { max-width: 100%; max-height: 420px; object-fit: contain; }
+
+    .modal-img-box img {
+      max-width: 100%;
+      max-height: 420px;
+      object-fit: contain;
+    }
+
     .gallery-thumbs {
       display: flex;
       gap: 10px;
@@ -707,6 +894,7 @@
       padding: 8px 0 16px;
       margin-bottom: 12px;
     }
+
     .gallery-thumb-item {
       flex: 0 0 100px;
       height: 65px;
@@ -717,15 +905,19 @@
       background: #050811;
       transition: all 0.2s;
     }
-    .gallery-thumb-item:hover, .gallery-thumb-item.active {
+
+    .gallery-thumb-item:hover,
+    .gallery-thumb-item.active {
       border-color: var(--accent-cyan);
       box-shadow: 0 0 10px var(--accent-glow);
     }
+
     .gallery-thumb-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
     .gallery-caption {
       font-size: 0.8rem;
       font-family: var(--font-mono);
@@ -753,12 +945,14 @@
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 20px;
     }
+
     .edu-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 24px;
     }
+
     .badge-award {
       display: inline-block;
       background: rgba(245, 158, 11, 0.15);
@@ -780,20 +974,25 @@
       font-size: 0.88rem;
       background: #050914;
     }
+
     .footer-links {
       display: flex;
       justify-content: center;
       gap: 20px;
       margin-bottom: 16px;
     }
+
     .footer-links a {
       color: #cbd5e1;
       text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-links a:hover { color: var(--accent-cyan); }
 
-    
+    .footer-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+
     /* --- iOS & Android Mobile Optimization Suite --- */
     :root {
       --sat: env(safe-area-inset-top, 0px);
@@ -830,9 +1029,11 @@
       margin-bottom: 24px;
       scrollbar-width: none;
     }
+
     .filter-container::-webkit-scrollbar {
       display: none;
     }
+
     .filter-btn {
       white-space: nowrap;
       flex-shrink: 0;
@@ -852,7 +1053,11 @@
       border-bottom: 1px solid rgba(56, 189, 248, 0.2);
       scrollbar-width: none;
     }
-    .mobile-quick-nav::-webkit-scrollbar { display: none; }
+
+    .mobile-quick-nav::-webkit-scrollbar {
+      display: none;
+    }
+
     .mobile-nav-pill {
       font-family: var(--font-mono);
       font-size: 0.76rem;
@@ -866,7 +1071,9 @@
       flex-shrink: 0;
       display: inline-block;
     }
-    .mobile-nav-pill:active, .mobile-nav-pill:hover {
+
+    .mobile-nav-pill:active,
+    .mobile-nav-pill:hover {
       background: rgba(0, 240, 255, 0.15);
       border-color: var(--accent-cyan);
       color: #fff;
@@ -874,41 +1081,98 @@
 
     /* Breakpoint: Tablets & Mobile Phones (<= 900px) */
     @media (max-width: 900px) {
-      .container { padding: 0 16px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-      .freelance-container { grid-template-columns: 1fr; gap: 36px; }
-      .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .stat-item { border-right: none; }
-      .stat-item:nth-child(odd) { border-right: 1px solid var(--border-color); }
-      .skills-grid { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; gap: 24px; }
-      .edu-grid { grid-template-columns: 1fr; }
+      .container {
+        padding: 0 16px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .freelance-container {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .stat-item {
+        border-right: none;
+      }
+
+      .stat-item:nth-child(odd) {
+        border-right: 1px solid var(--border-color);
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .edu-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Breakpoint: Mobile Phones (<= 768px) */
     @media (max-width: 768px) {
-      .mobile-quick-nav { display: flex; }
-      .nav-links { display: none; }
-      nav { padding: 12px 0; }
-      .brand { font-size: 1.1rem; }
-      .btn-contact { padding: 8px 14px; font-size: 0.8rem; }
+      .mobile-quick-nav {
+        display: flex;
+      }
 
-      h1 { font-size: 2.1rem; line-height: 1.25; }
-      .hero-subtitle { font-size: 0.95rem; }
-      
+      .nav-links {
+        display: none;
+      }
+
+      nav {
+        padding: 12px 0;
+      }
+
+      .brand {
+        font-size: 1.1rem;
+      }
+
+      .btn-contact {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+      }
+
+      h1 {
+        font-size: 2.1rem;
+        line-height: 1.25;
+      }
+
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
+
       .hero-contact-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
       }
-      .contact-item { width: 100%; font-size: 0.85rem; }
-      
+
+      .contact-item {
+        width: 100%;
+        font-size: 0.85rem;
+      }
+
       .hero-actions {
         flex-direction: column;
         width: 100%;
         gap: 12px;
       }
-      .hero-actions .btn-primary, .hero-actions .btn-secondary {
+
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary {
         width: 100%;
         text-align: center;
         padding: 12px 20px;
@@ -924,19 +1188,24 @@
         min-height: 330px;
         max-width: 100%;
       }
+
       .card-face {
         padding: 20px 18px;
       }
+
       .card-face h3 {
         font-size: 1.25rem !important;
       }
+
       .emv-chip {
         width: 42px;
         height: 32px;
       }
+
       .freelance-services-list {
         grid-template-columns: 1fr;
       }
+
       .btn-client-action {
         width: 100%;
         min-height: 48px;
@@ -945,8 +1214,10 @@
       /* Modal Mobile Optimization */
       .modal-overlay {
         padding: 12px;
-        align-items: flex-end; /* Sheet style on mobile */
+        align-items: flex-end;
+        /* Sheet style on mobile */
       }
+
       .modal-content {
         max-height: 88vh;
         width: 100%;
@@ -954,6 +1225,7 @@
         padding: 22px 16px;
         -webkit-overflow-scrolling: touch;
       }
+
       .modal-close {
         top: 12px;
         right: 12px;
@@ -961,11 +1233,13 @@
         height: 40px;
         font-size: 1.3rem;
       }
+
       .gallery-thumbs {
         gap: 8px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
       }
+
       .gallery-thumb-item {
         width: 64px;
         height: 48px;
@@ -975,15 +1249,293 @@
 
     /* Breakpoint: Small Mobile (<= 400px - iPhone SE, Galaxy A series) */
     @media (max-width: 400px) {
-      h1 { font-size: 1.85rem; }
-      .brand-badge { font-size: 0.65rem; padding: 2px 6px; }
-      .stats-bar { grid-template-columns: 1fr; }
-      .stat-item:nth-child(odd) { border-right: none; border-bottom: 1px solid var(--border-color); }
-      .card-3d-wrapper { min-height: 360px; }
+      h1 {
+        font-size: 1.85rem;
+      }
+
+      .brand-badge {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+      }
+
+      .stats-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-item:nth-child(odd) {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .card-3d-wrapper {
+        min-height: 360px;
+      }
     }
 
-</style>
+    /* --- 3D Holographic Freelance PCB Business Card Styles --- */
+    .freelance-section {
+      padding: 70px 0 60px 0;
+      position: relative;
+    }
+
+    .freelance-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .card-3d-wrapper {
+      perspective: 1400px;
+      -webkit-perspective: 1400px;
+      width: 100%;
+      max-width: 520px;
+      height: 330px;
+      margin: 0 auto;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      position: relative;
+    }
+
+    .card-3d-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: left;
+      transition: transform 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      -webkit-transition: -webkit-transform 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      border-radius: 18px;
+    }
+
+    .card-3d-wrapper.flipped .card-3d-inner {
+      transform: rotateY(180deg) !important;
+      -webkit-transform: rotateY(180deg) !important;
+    }
+
+    .card-face {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden !important;
+      backface-visibility: hidden !important;
+      border-radius: 18px;
+      padding: 24px 26px;
+      overflow: hidden;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      background: linear-gradient(135deg, #070e1c 0%, #0d172c 50%, #070e1c 100%);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85), 0 0 30px rgba(0, 240, 255, 0.15), inset 0 0 20px rgba(245, 158, 11, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+
+    .card-front {
+      transform: rotateY(0deg);
+      -webkit-transform: rotateY(0deg);
+      z-index: 2;
+    }
+
+    /* Gold Copper Trace Overlay */
+    .card-face::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 90% 10%, rgba(245, 158, 11, 0.18) 0%, transparent 40%),
+        linear-gradient(rgba(245, 158, 11, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 158, 11, 0.06) 1px, transparent 1px);
+      background-size: 100% 100%, 24px 24px, 24px 24px;
+      pointer-events: none;
+    }
+
+    /* Holographic Shimmer Effect */
+    .card-face::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, transparent 20%, rgba(0, 240, 255, 0.08) 40%, rgba(245, 158, 11, 0.18) 50%, rgba(16, 185, 129, 0.08) 60%, transparent 80%);
+      background-size: 200% 200%;
+      animation: holoShimmer 6s infinite linear;
+      pointer-events: none;
+    }
+
+    @keyframes holoShimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    /* Smart Card EMV Chip */
+    .emv-chip {
+      width: 48px;
+      height: 38px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #d97706, #fbbf24, #f59e0b, #b45309);
+      border: 1px solid #78350f;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), inset 0 0 4px rgba(255, 255, 255, 0.4);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2px;
+      padding: 3px;
+      flex-shrink: 0;
+    }
+    .emv-line {
+      border: 0.5px solid rgba(120, 53, 15, 0.7);
+      border-radius: 2px;
+    }
+
+    /* Back Face of Card */
+    .card-back {
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+      border-color: rgba(0, 240, 255, 0.45);
+      background: linear-gradient(135deg, #091326 0%, #060d1a 100%);
+      z-index: 1;
+    }
+
+    .card-3d-wrapper.flipped .card-back {
+      z-index: 3;
+    }
+
+    .flip-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent-cyan);
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      background: rgba(0, 240, 255, 0.12);
+      padding: 4px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      cursor: pointer;
+      animation: pulseFlip 2s infinite ease-in-out;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .flip-hint:hover {
+      background: rgba(0, 240, 255, 0.25);
+      border-color: var(--accent-cyan);
+    }
+    @keyframes pulseFlip {
+      0%, 100% { opacity: 0.85; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-2px); }
+    }
+
+    .freelance-services-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .service-mini-card {
+      background: rgba(13, 23, 44, 0.65);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      transition: all 0.25s ease;
+    }
+    .service-mini-card:hover {
+      border-color: var(--accent-cyan);
+      background: rgba(18, 32, 60, 0.85);
+      transform: translateY(-3px);
+    }
+    .service-mini-card h4 {
+      font-size: 0.92rem;
+      color: #fff;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .service-mini-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .btn-client-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      position: relative;
+      z-index: 10;
+    }
+    .btn-vcard {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #050b17;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+    }
+    .btn-vcard:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.55);
+    }
+    .btn-inquire {
+      background: linear-gradient(135deg, #00f0ff, #0284c7);
+      color: #030712;
+      box-shadow: 0 4px 15px rgba(0, 240, 255, 0.35);
+    }
+    .btn-inquire:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 240, 255, 0.55);
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+    }
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.55);
+    }
+
+    /* Notification Toast for vCard download */
+    .vcard-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0f172a;
+      border: 1px solid #10b981;
+      color: #f8fafc;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(16, 185, 129, 0.3);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 99999;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+    }
+    .vcard-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
 </head>
+
 <body>
   <!-- 3D Interactive Electronic PCB Circuit Background Canvas -->
   <canvas id="pcb3dCanvas"></canvas>
@@ -1022,13 +1574,16 @@
     <div class="container hero-grid">
       <div>
         <div class="status-pill">
-          <span class="pulse-dot"></span> Available for Embedded &amp; Robotics Roles <canvas id="heroOscilloscope" class="oscilloscope-canvas" width="64" height="16"></canvas>
+          <span class="pulse-dot"></span> Available for Embedded &amp; Robotics Roles <canvas id="heroOscilloscope"
+            class="oscilloscope-canvas" width="64" height="16"></canvas>
         </div>
         <h1>
           Engineering <span class="gradient-text">Intelligent Hardware</span> & Autonomous Systems
         </h1>
         <p class="hero-subtitle">
-          Electronics & Communication Engineer with a Mechatronics foundation. Specialist in custom PCB design (KiCad), embedded C/C++ & ESP-IDF firmware, ROS2 Nav2 & Micro-ROS, Assistive AI systems (YOLOv8 & Turn-by-Turn GPS), and enterprise smart grid telemetry (DLMS/Modbus).
+          Electronics & Communication Engineer with a Mechatronics foundation. Specialist in custom PCB design (KiCad),
+          embedded C/C++ & ESP-IDF firmware, ROS2 Nav2 & Micro-ROS, Assistive AI systems (YOLOv8 & Turn-by-Turn GPS),
+          and enterprise smart grid telemetry (DLMS/Modbus).
         </p>
 
         <div class="hero-contact-row">
@@ -1062,16 +1617,25 @@
         </div>
         <div class="terminal-body">
           <p class="cmd-line">&gt; probing active hardware architectures...</p>
-          <p class="cmd-out">CPU/MCU : <span class="highlight-green">ESP32-S3 | ESP32 | STM32 | Raspberry Pi 4</span></p>
-          <p class="cmd-out">MIDDLEWARE: <span class="highlight-green">ROS2 Humble (Nav2 Stack) &amp; micro-ROS</span></p>
-          <p class="cmd-out">EDA &amp; CNC : <span class="highlight-green">KiCad 8.0, Gerber/Excellon G-code Plotter</span></p>
-          <p class="cmd-out">PROTOCOLS : <span class="highlight-green">Modbus RTU/TCP, DLMS, RS-485, Mutual-TLS</span></p>
-          <p class="cmd-out">SENSING   : <span class="highlight-green">NEO-M9N GNSS, BNO055 9-DOF, YDLiDAR, YOLOv8</span></p>
+          <p class="cmd-out">CPU/MCU : <span class="highlight-green">ESP32-S3 | ESP32 | STM32 | Raspberry Pi 4</span>
+          </p>
+          <p class="cmd-out">MIDDLEWARE: <span class="highlight-green">ROS2 Humble (Nav2 Stack) &amp; micro-ROS</span>
+          </p>
+          <p class="cmd-out">EDA &amp; CNC : <span class="highlight-green">KiCad, Gerber/Excellon G-code Plotter</span>
+          </p>
+          <p class="cmd-out">PROTOCOLS : <span class="highlight-green">Modbus RTU/TCP, DLMS, RS-485, Mutual-TLS</span>
+          </p>
+          <p class="cmd-out">SENSING : <span class="highlight-green">NEO-M9N GNSS, BNO055 9-DOF, YDLiDAR, YOLOv8</span>
+          </p>
           <p class="cmd-line" style="margin-top: 10px;">&gt; checking patent &amp; fellowship portfolio...</p>
-          <p class="cmd-out">[OK] <span class="highlight-amber">FidoFeed Patent Complete Spec &amp; 7 CAD Drawings</span></p>
-          <p class="cmd-out">[OK] <span class="highlight-amber">FARMITOPIA Raker Robot (Hybrid ROS2 + ESP32-S3)</span></p>
-          <p class="cmd-out">[OK] <span class="highlight-amber">Smart Blind Stick (YOLOv8 + Haptic + GPS Turn-by-Turn)</span></p>
-          <p class="cmd-out">[OK] <span class="highlight-green">URF-II Seed Grant Fellow | Hackathon 2nd Place</span></p>
+          <p class="cmd-out">[OK] <span class="highlight-amber">FidoFeed Patent Complete Spec &amp; 7 CAD
+              Drawings</span></p>
+          <p class="cmd-out">[OK] <span class="highlight-amber">FARMITOPIA Raker Robot (Hybrid ROS2 + ESP32-S3)</span>
+          </p>
+          <p class="cmd-out">[OK] <span class="highlight-amber">Smart Blind Stick (YOLOv8 + Haptic + GPS
+              Turn-by-Turn)</span></p>
+          <p class="cmd-out">[OK] <span class="highlight-green">URF-II Seed Grant Fellow | Hackathon 2nd Place</span>
+          </p>
           <p class="cmd-line" style="margin-top: 10px;">&gt; ready for deployment_</p>
         </div>
       </div>
@@ -1104,7 +1668,7 @@
     </div>
   </div>
 
-  
+
   <!-- Section: Freelance Services & Interactive 3D Business Card -->
   <section id="freelance" class="freelance-section">
     <div class="container">
@@ -1117,15 +1681,16 @@
       <div class="section-header" style="text-align: center; margin-bottom: 40px;">
         <span class="section-tag">// Client Services &amp; Hardware Consulting</span>
         <h2 class="section-title">Freelance Engineering &amp; Turnkey Development</h2>
-        <p class="section-desc" style="margin: 0 auto;">Partner with an agile electronics architect for turnkey PCB layout, production firmware, ROS 2 autonomous robotics bring-up, and rapid prototyping.</p>
+        <p class="section-desc" style="margin: 0 auto;">Partner with an agile electronics architect for turnkey PCB
+          layout, production firmware, ROS 2 autonomous robotics bring-up, and rapid prototyping.</p>
       </div>
 
       <div class="freelance-container">
         <!-- Column 1: Interactive 3D Holographic Business Card -->
         <div>
-          <div class="card-3d-wrapper" id="businessCardWrapper" onclick="toggleCardFlip()">
+          <div class="card-3d-wrapper" id="businessCardWrapper" onclick="toggleCardFlip(event)">
             <div class="card-3d-inner" id="businessCardInner">
-              
+
               <!-- Front Face: Gold ENIG Circuit Board Card -->
               <div class="card-face card-front">
                 <div style="display:flex; justify-content:space-between; align-items:flex-start;">
@@ -1136,17 +1701,25 @@
                     <div class="emv-line"></div>
                   </div>
                   <div style="text-align:right;">
-                    <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--accent-amber); display:block; font-weight:700; letter-spacing:0.5px;">PCB ID: KM-2026-ENG</span>
-                    <span style="font-family:var(--font-mono); font-size:0.65rem; color:#94a3b8;">ENIG GOLD 2-LAYER • JLCPCB/PCBWay READY</span>
+                    <span
+                      style="font-family:var(--font-mono); font-size:0.72rem; color:var(--accent-amber); display:block; font-weight:700; letter-spacing:0.5px;">PCB
+                      ID: KM-2026-ENG</span>
+                    <span style="font-family:var(--font-mono); font-size:0.65rem; color:#94a3b8;">ENIG GOLD 2-LAYER •
+                      JLCPCB/PCBWay READY</span>
                   </div>
                 </div>
 
                 <div style="margin: 14px 0 8px 0;">
-                  <h3 style="color:#ffffff; font-size:1.45rem; font-weight:800; letter-spacing:0.5px; margin-bottom:2px;">KIRTHAN K M</h3>
-                  <p style="color:var(--accent-cyan); font-family:var(--font-mono); font-size:0.82rem; font-weight:600;">Embedded Systems &amp; Robotics Consultant</p>
+                  <h3
+                    style="color:#ffffff; font-size:1.45rem; font-weight:800; letter-spacing:0.5px; margin-bottom:2px;">
+                    KIRTHAN K M</h3>
+                  <p
+                    style="color:var(--accent-cyan); font-family:var(--font-mono); font-size:0.82rem; font-weight:600;">
+                    Embedded Systems &amp; Robotics Consultant</p>
                 </div>
 
-                <div style="background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:10px 14px; margin-bottom:8px;">
+                <div
+                  style="background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:10px 14px; margin-bottom:8px;">
                   <p style="font-size:0.78rem; color:#cbd5e1; line-height:1.45; font-family:var(--font-mono);">
                     &gt; PCB Schematics &amp; Multi-layer Routing (KiCad)<br>
                     &gt; ESP32-S3 / STM32 Firmware &amp; micro-ROS<br>
@@ -1157,34 +1730,41 @@
 
                 <div style="display:flex; justify-content:space-between; align-items:center;">
                   <span style="color:#10b981; font-family:var(--font-mono); font-size:0.75rem; font-weight:600;">
-                    <span class="pulse-dot" style="display:inline-block; margin-right:4px;"></span> Available for Global Contracts
+                    <span class="pulse-dot" style="display:inline-block; margin-right:4px;"></span> Available for Global
+                    Contracts
                   </span>
-                  <span class="flip-hint">⟲ Click to Flip Card</span>
+                  <span class="flip-hint" onclick="event.stopPropagation(); toggleCardFlip(event)">🔄 Click to Flip Card</span>
                 </div>
               </div>
 
               <!-- Back Face: Direct Contact Hub & Digital Channels -->
               <div class="card-face card-back">
-                <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:10px;">
+                <div
+                  style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:10px;">
                   <div>
                     <h4 style="color:#fff; font-size:1.1rem; font-weight:700;">Direct Contact Channels</h4>
-                    <span style="color:var(--accent-cyan); font-family:var(--font-mono); font-size:0.72rem;">Rapid Client Response &lt; 12 Hours</span>
+                    <span style="color:var(--accent-cyan); font-family:var(--font-mono); font-size:0.72rem;">Rapid
+                      Client Response &lt; 12 Hours</span>
                   </div>
-                  <span class="flip-hint">⟲ Flip Front</span>
+                  <span class="flip-hint" onclick="event.stopPropagation(); toggleCardFlip(event)">🔄 Flip Front</span>
                 </div>
 
-                <div style="margin: 12px 0; display:flex; flex-direction:column; gap:8px; font-size:0.82rem; font-family:var(--font-mono);">
+                <div
+                  style="margin: 12px 0; display:flex; flex-direction:column; gap:8px; font-size:0.82rem; font-family:var(--font-mono);">
                   <div style="display:flex; align-items:center; gap:8px;">
                     <span style="color:var(--accent-amber);">✉️ Email:</span>
-                    <a href="mailto:kirthankalburgi8684@gmail.com" style="color:#f8fafc; text-decoration:none;">kirthankalburgi8684@gmail.com</a>
+                    <a href="mailto:kirthankalburgi8684@gmail.com"
+                      style="color:#f8fafc; text-decoration:none;">kirthankalburgi8684@gmail.com</a>
                   </div>
                   <div style="display:flex; align-items:center; gap:8px;">
                     <span style="color:var(--accent-emerald);">📞 Phone / WhatsApp:</span>
-                    <a href="https://wa.me/918618885273?text=Hi%20Kirthan,%20I%20would%20like%20to%20discuss%20a%20hardware/embedded%20project" target="_blank" style="color:#f8fafc; text-decoration:none;">+91 8618885273</a>
+                    <a href="https://wa.me/918618885273?text=Hi%20Kirthan,%20I%20would%20like%20to%20discuss%20a%20hardware/embedded%20project"
+                      target="_blank" style="color:#f8fafc; text-decoration:none;">+91 8618885273</a>
                   </div>
                   <div style="display:flex; align-items:center; gap:8px;">
                     <span style="color:var(--accent-blue);">🔗 LinkedIn:</span>
-                    <a href="https://www.linkedin.com/in/kirthan-k-m-81a122308/" target="_blank" style="color:#f8fafc; text-decoration:none;">kirthan-k-m-81a122308</a>
+                    <a href="https://www.linkedin.com/in/kirthan-k-m-81a122308/" target="_blank"
+                      style="color:#f8fafc; text-decoration:none;">kirthan-k-m-81a122308</a>
                   </div>
                   <div style="display:flex; align-items:center; gap:8px;">
                     <span style="color:#a855f7;">📍 Location:</span>
@@ -1193,10 +1773,11 @@
                 </div>
 
                 <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                  <button class="btn-client-action btn-vcard" onclick="event.stopPropagation(); downloadVCard()">
+                  <button class="btn-client-action btn-vcard" onclick="event.stopPropagation(); downloadVCard(event)">
                     <span>📇</span> Save Contact (.vcf)
                   </button>
-                  <a href="https://wa.me/918618885273?text=Hi%20Kirthan,%20I%20would%20like%20to%20hire%20you%20for%20a%20project" target="_blank" class="btn-client-action btn-whatsapp" onclick="event.stopPropagation()">
+                  <a href="https://wa.me/918618885273?text=Hi%20Kirthan,%20I%20would%20like%20to%20hire%20you%20for%20a%20project"
+                    target="_blank" class="btn-client-action btn-whatsapp" onclick="event.stopPropagation()">
                     <span>💬</span> Chat WhatsApp
                   </a>
                 </div>
@@ -1204,46 +1785,55 @@
 
             </div>
           </div>
-          <p style="text-align:center; font-family:var(--font-mono); color:var(--text-muted); font-size:0.75rem; margin-top:12px;">
+          <p
+            style="text-align:center; font-family:var(--font-mono); color:var(--text-muted); font-size:0.75rem; margin-top:12px;">
             Interactive 3D Holographic PCB Business Card • Click card or button to rotate
           </p>
         </div>
 
         <!-- Column 2: Freelance Services & Workflow Breakdown -->
         <div>
-          <span style="color:var(--accent-amber); font-family:var(--font-mono); font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:1px;">Client Collaboration Framework</span>
+          <span
+            style="color:var(--accent-amber); font-family:var(--font-mono); font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:1px;">Client
+            Collaboration Framework</span>
           <h3 style="color:#fff; font-size:1.5rem; margin: 4px 0 10px 0;">How I Accelerate Your Hardware Milestones</h3>
           <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.5;">
-            Whether you are a startup needing an MVP or an enterprise scaling an industrial IoT product, I provide end-to-end engineering from architectural schematics to fabrication and field debugging.
+            Whether you are a startup needing an MVP or an enterprise scaling an industrial IoT product, I provide
+            end-to-end engineering from architectural schematics to fabrication and field debugging.
           </p>
 
           <div class="freelance-services-list">
             <div class="service-mini-card">
               <h4><span>📐</span> Custom PCB Design</h4>
-              <p>Schematic capture, multi-layer routing, high-voltage AC creepage slots, BOM selection, and Gerber packages ready for JLCPCB.</p>
+              <p>Schematic capture, multi-layer routing, high-voltage AC creepage slots, BOM selection, and Gerber
+                packages ready for JLCPCB.</p>
             </div>
 
             <div class="service-mini-card">
               <h4><span>⚡</span> Embedded Firmware</h4>
-              <p>Production C/C++ firmware on ESP32-S3, STM32, ESP-IDF, FreeRTOS, Mutual-TLS telemetry, Modbus RTU, and OTA updates.</p>
+              <p>Production C/C++ firmware on ESP32-S3, STM32, ESP-IDF, FreeRTOS, Mutual-TLS telemetry, Modbus RTU, and
+                OTA updates.</p>
             </div>
 
             <div class="service-mini-card">
               <h4><span>🤖</span> Autonomous Robotics</h4>
-              <p>ROS 2 Humble Nav2 stack bring-up, 2D LiDAR SLAM, REP-105 coordinate trees, motor drive kinematics, and micro-ROS bridge.</p>
+              <p>ROS 2 Humble Nav2 stack bring-up, 2D LiDAR SLAM, REP-105 coordinate trees, motor drive kinematics, and
+                micro-ROS bridge.</p>
             </div>
 
             <div class="service-mini-card">
               <h4><span>🔬</span> Board Diagnostics &amp; Rework</h4>
-              <p>Oscilloscope power rail tracing, schematic net isolation (OpenBoardView), SMD micro-soldering, and rapid prototype turnarounds.</p>
+              <p>Oscilloscope power rail tracing, schematic net isolation (OpenBoardView), SMD micro-soldering, and
+                rapid prototype turnarounds.</p>
             </div>
           </div>
 
           <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;">
-            <a href="mailto:kirthankalburgi8684@gmail.com?subject=Project%20Inquiry%20-%20Embedded%20Engineering&body=Hi%20Kirthan,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20involving:%0D%0A-%20Project%20Type:%20[PCB%20/%20Firmware%20/%20Robotics]%0D%0A-%20Target%20Timeline:%0D%0A-%20Brief%20Description:%0D%0A%0D%0ABest%20regards," class="btn-client-action btn-inquire">
+            <a href="mailto:kirthankalburgi8684@gmail.com?subject=Project%20Inquiry%20-%20Embedded%20Engineering&body=Hi%20Kirthan,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20project%20involving:%0D%0A-%20Project%20Type:%20[PCB%20/%20Firmware%20/%20Robotics]%0D%0A-%20Target%20Timeline:%0D%0A-%20Brief%20Description:%0D%0A%0D%0ABest%20regards,"
+              class="btn-client-action btn-inquire">
               <span>🚀</span> Start Project Inquiry
             </a>
-            <button class="btn-client-action btn-vcard" onclick="downloadVCard()">
+            <button class="btn-client-action btn-vcard" onclick="downloadVCard(event)">
               <span>📥</span> Download vCard
             </button>
           </div>
@@ -1258,16 +1848,18 @@
       <div class="section-header">
         <span class="section-tag">// Capabilities</span>
         <h2 class="section-title">Technical Expertise</h2>
-        <p class="section-desc">A multidisciplinary skill set uniting electronics design, real-time embedded programming, robotics navigation, and physical fabrication.</p>
+        <p class="section-desc">A multidisciplinary skill set uniting electronics design, real-time embedded
+          programming, robotics navigation, and physical fabrication.</p>
       </div>
 
       <div class="skills-grid">
         <div class="skill-card">
           <div class="skill-card-icon">⚡</div>
           <h3>PCB Design &amp; CNC Isolation</h3>
-          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px;">Schematic capture, multi-layer board routing, creepage/clearance DRC, isolation milling algorithms, and Gerber to G-code conversion.</p>
+          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px;">Schematic capture, multi-layer
+            board routing, creepage/clearance DRC, isolation milling algorithms, and Gerber to G-code conversion.</p>
           <div class="skill-tags">
-            <span class="skill-pill">KiCad 7/8</span>
+            <span class="skill-pill">KiCad </span>
             <span class="skill-pill">Gerber RS-274X</span>
             <span class="skill-pill">Excellon Drill</span>
             <span class="skill-pill">Klipper CNC G-Code</span>
@@ -1279,7 +1871,8 @@
         <div class="skill-card">
           <div class="skill-card-icon">🧠</div>
           <h3>Microcontrollers &amp; Firmware</h3>
-          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px;">Production-grade firmware in C/C++, ESP-IDF with FreeRTOS, Mutual-TLS MQTT, interrupt service routines (ISR), and ADC zero-g calibration.</p>
+          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px;">Production-grade firmware in C/C++,
+            ESP-IDF with FreeRTOS, Mutual-TLS MQTT, interrupt service routines (ISR), and ADC zero-g calibration.</p>
           <div class="skill-tags">
             <span class="skill-pill">ESP32-S3 &amp; ESP32</span>
             <span class="skill-pill">ESP-IDF</span>
@@ -1293,7 +1886,9 @@
         <div class="skill-card">
           <div class="skill-card-icon">🤖</div>
           <h3>Robotics &amp; ROS2</h3>
-          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px;">Nav2 navigation stack, micro-ROS real-time drivers, 2D LiDAR SLAM, Decawave UWB / RTK-GPS geofencing, and differential drive / 4WD kinematics.</p>
+          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px;">Nav2 navigation stack, micro-ROS
+            real-time drivers, 2D LiDAR SLAM, Decawave UWB / RTK-GPS geofencing, and differential drive / 4WD
+            kinematics.</p>
           <div class="skill-tags">
             <span class="skill-pill">ROS2 Humble</span>
             <span class="skill-pill">Nav2 Stack</span>
@@ -1307,7 +1902,8 @@
         <div class="skill-card">
           <div class="skill-card-icon">📡</div>
           <h3>Industrial &amp; IoT Protocols</h3>
-          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px;">Utility meter telemetry, Modbus parameter harvesting, magnetic latch relay actuation, and full-duplex WebRTC intercoms.</p>
+          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px;">Utility meter telemetry, Modbus
+            parameter harvesting, magnetic latch relay actuation, and full-duplex WebRTC intercoms.</p>
           <div class="skill-tags">
             <span class="skill-pill">Modbus RTU/TCP</span>
             <span class="skill-pill">DLMS / COSEM</span>
@@ -1321,7 +1917,8 @@
         <div class="skill-card">
           <div class="skill-card-icon">👁️</div>
           <h3>Assistive AI &amp; Vision</h3>
-          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px;">Deploying lightweight YOLOv8 models on edge SBCs, BNO055 9-DOF digital compass integration, and directional haptic guidance.</p>
+          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px;">Deploying lightweight YOLOv8 models
+            on edge SBCs, BNO055 9-DOF digital compass integration, and directional haptic guidance.</p>
           <div class="skill-tags">
             <span class="skill-pill">YOLOv8 Nano</span>
             <span class="skill-pill">OpenCV</span>
@@ -1335,7 +1932,8 @@
         <div class="skill-card">
           <div class="skill-card-icon">🖨️</div>
           <h3>CAD &amp; Rapid Prototyping</h3>
-          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px;">Chassis and enclosure design, additive manufacturing, Klipper CNC configuration, and solving mechanical tolerances.</p>
+          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px;">Chassis and enclosure design,
+            additive manufacturing, Klipper CNC configuration, and solving mechanical tolerances.</p>
           <div class="skill-tags">
             <span class="skill-pill">Fusion 360</span>
             <span class="skill-pill">SolidWorks</span>
@@ -1355,7 +1953,8 @@
       <div class="section-header">
         <span class="section-tag">// Career Track</span>
         <h2 class="section-title">Industry &amp; Research Experience</h2>
-        <p class="section-desc">Hands-on experience in commercial product engineering, autonomous robotics, smart grids, and technical instruction.</p>
+        <p class="section-desc">Hands-on experience in commercial product engineering, autonomous robotics, smart grids,
+          and technical instruction.</p>
       </div>
 
       <div class="timeline">
@@ -1367,11 +1966,21 @@
             <div class="timeline-role">ROS Developer &amp; Smart Metering R&D Intern</div>
             <div class="timeline-company">Robomanthan Pvt Ltd (BESCOM Smart Energy Grid &amp; Robotics Lab)</div>
             <ul class="timeline-points">
-              <li><strong>Enterprise CCMS &amp; BESCOM Smart Grid</strong>: Developed production-ready ESP-IDF firmware for Centralized Control Monitoring Systems (CCMS) connecting over Mutual-TLS (port 8883) to cloud MQTT brokers. Handled telemetry harvesting over RS-485 Modbus RTU and DLMS/COSEM for 1-phase 2-wire and 3-phase 4-wire MFM smart meters.</li>
-              <li><strong>Magnetic Latch Relay Automation</strong>: Programmed pulse-driven latching relay logic (`LLR-T-3-100-1A-12D-P-J-P`) for automated remote load reconnection/disconnection and power factor optimization.</li>
-              <li><strong>Automated PCB Plotter Platform</strong>: Built an in-house Python/Flask toolchain parsing RS-274X Gerber and Excellon drill files into CNC isolation routing G-code for Klipper milling plotters.</li>
-              <li><strong>NAVIS &amp; NAVIS 2.0 Autonomous Companion</strong>: Engineered master-slave architecture (Raspberry Pi vision/NLP + ESP32 motor driver) and built a cross-platform Android PWA/APK interface with GitHub Actions CI/CD.</li>
-              <li><strong>Instructional Leadership</strong>: Trained 200+ engineering students in OpenCV, KiCad PCB Design, and Mobile Robotics at Acharya IT and DSCE; authored 4 comprehensive engineering syllabi.</li>
+              <li><strong>Enterprise CCMS &amp; BESCOM Smart Grid</strong>: Developed production-ready ESP-IDF firmware
+                for Centralized Control Monitoring Systems (CCMS) connecting over Mutual-TLS (port 8883) to cloud MQTT
+                brokers. Handled telemetry harvesting over RS-485 Modbus RTU and DLMS/COSEM for 1-phase 2-wire and
+                3-phase 4-wire MFM smart meters.</li>
+              <li><strong>Magnetic Latch Relay Automation</strong>: Programmed pulse-driven latching relay logic
+                (`LLR-T-3-100-1A-12D-P-J-P`) for automated remote load reconnection/disconnection and power factor
+                optimization.</li>
+              <li><strong>Automated PCB Plotter Platform</strong>: Built an in-house Python/Flask toolchain parsing
+                RS-274X Gerber and Excellon drill files into CNC isolation routing G-code for Klipper milling plotters.
+              </li>
+              <li><strong>NAVIS &amp; NAVIS 2.0 Autonomous Companion</strong>: Engineered master-slave architecture
+                (Raspberry Pi vision/NLP + ESP32 motor driver) and built a cross-platform Android PWA/APK interface with
+                GitHub Actions CI/CD.</li>
+              <li><strong>Instructional Leadership</strong>: Trained 200+ engineering students in OpenCV, KiCad PCB
+                Design, and Mobile Robotics at Acharya IT and DSCE; authored 4 comprehensive engineering syllabi.</li>
             </ul>
           </div>
         </div>
@@ -1384,10 +1993,15 @@
             <div class="timeline-role">Hardware &amp; IoT Prototyping Intern</div>
             <div class="timeline-company">SAM’S DESIGN (Prototyping &amp; Product Facility)</div>
             <ul class="timeline-points">
-              <li><strong>Shirodhara Automated Therapy System</strong>: Managed complete electronic hardware design, component selection, and ESP32 firmware with OLED SSD1306 menu navigation, DS18B20 OneWire closed-loop temperature control, and dual-pump oil recirculation.</li>
-              <li><strong>Automated Food Processor</strong>: Engineered electromechanical safety interlocks featuring dual-stage door microswitches to isolate motor power unless containers are securely locked.</li>
-              <li><strong>Speed Regulation</strong>: Developed custom PWM motor roller controllers to dynamically adapt ingredient feed rates for varied textures.</li>
-              <li><strong>Rapid 3D Prototyping</strong>: Designed enclosures in SolidWorks and Fusion 360; operated and maintained FDM 3D printers, diagnosing layer-shift, stringing, and thermal warping.</li>
+              <li><strong>Shirodhara Automated Therapy System</strong>: Managed complete electronic hardware design,
+                component selection, and ESP32 firmware with OLED SSD1306 menu navigation, DS18B20 OneWire closed-loop
+                temperature control, and dual-pump oil recirculation.</li>
+              <li><strong>Automated Food Processor</strong>: Engineered electromechanical safety interlocks featuring
+                dual-stage door microswitches to isolate motor power unless containers are securely locked.</li>
+              <li><strong>Speed Regulation</strong>: Developed custom PWM motor roller controllers to dynamically adapt
+                ingredient feed rates for varied textures.</li>
+              <li><strong>Rapid 3D Prototyping</strong>: Designed enclosures in SolidWorks and Fusion 360; operated and
+                maintained FDM 3D printers, diagnosing layer-shift, stringing, and thermal warping.</li>
             </ul>
           </div>
         </div>
@@ -1400,7 +2014,8 @@
             <div class="timeline-role">Freelance Hardware &amp; Embedded Systems Specialist</div>
             <div class="timeline-company">Self-Employed / Hardware Support</div>
             <ul class="timeline-points">
-              <li>Conducted hardware circuit debugging, microcontroller bring-up (ESP32, STM32, Arduino), and sensor integration for client projects.</li>
+              <li>Conducted hardware circuit debugging, microcontroller bring-up (ESP32, STM32, Arduino), and sensor
+                integration for client projects.</li>
               <li>Provided component-level board diagnostics, soldering, rework, and firmware troubleshooting.</li>
             </ul>
           </div>
@@ -1415,7 +2030,8 @@
       <div class="section-header">
         <span class="section-tag">// Engineering Showcase</span>
         <h2 class="section-title">Featured Projects</h2>
-        <p class="section-desc">Selected embedded hardware, robotics, assistive AI, patent drawings, and custom PCB projects built from ground up.</p>
+        <p class="section-desc">Selected embedded hardware, robotics, assistive AI, patent drawings, and custom PCB
+          projects built from ground up.</p>
       </div>
 
       <!-- Filters -->
@@ -1441,7 +2057,9 @@
             <span class="project-category">Robotics &amp; IoT • RNSIT Fellowship</span>
             <h3 class="project-title">FidoFeed: IoT Interactive Pet Assistant Bot</h3>
             <p class="project-desc">
-              Mobile companion robot featuring complete patent specification and 7 official drawings (system block diagram, circuit schematics, 3D CAD multi-tier chassis, hopper dispenser, and base drive). Integrated Tailscale VPN and pet facial recognition.
+              Mobile companion robot featuring complete patent specification and 7 official drawings (system block
+              diagram, circuit schematics, 3D CAD multi-tier chassis, hopper dispenser, and base drive). Integrated
+              Tailscale VPN and pet facial recognition.
             </p>
             <div class="project-tech">
               <span class="tech-tag">Raspberry Pi 4B</span>
@@ -1452,22 +2070,26 @@
               <span class="tech-tag">Face Recognition</span>
             </div>
             <div class="project-actions">
-              <button class="btn-view-details" onclick="openModal('fidofeed')">View Patent Drawings &amp; Specs →</button>
+              <button class="btn-view-details" onclick="openModal('fidofeed')">View Patent Drawings &amp; Specs
+                →</button>
             </div>
           </div>
         </div>
 
         <!-- Project 2: FARMITOPIA Raker Robot -->
         <div class="project-card" data-category="robotics industrial">
-          <div class="project-img-wrapper" style="background:#0c1526; display:flex; align-items:center; justify-content:center;">
-            <img src="assets/Farmitopia-Logo.png" alt="FARMITOPIA Official Client Logo" style="object-fit:contain; padding:24px; max-height:220px;">
+          <div class="project-img-wrapper"
+            style="background:#0c1526; display:flex; align-items:center; justify-content:center;">
+            <img src="assets/Farmitopia-Logo.png" alt="FARMITOPIA Official Client Logo"
+              style="object-fit:contain; padding:24px; max-height:220px;">
             <div class="project-badge-overlay">Client Project • Autonomous Coffee Yard Raker</div>
           </div>
           <div class="project-content">
             <span class="project-category">Client Project • FARMITOPIA (K2L)</span>
             <h3 class="project-title">FARMITOPIA: Autonomous Coffee Drying Yard Raker</h3>
             <p class="project-desc">
-              Heavy-duty agricultural robot with hybrid ROS2 Nav2 + ESP32-S3 micro-ROS, RTK-GPS / Decawave UWB polygon lot mapping, 12V linear actuator blade lift, BH1750 lux monitoring, and motor current stall detection.
+              Heavy-duty agricultural robot with hybrid ROS2 Nav2 + ESP32-S3 micro-ROS, RTK-GPS / Decawave UWB polygon
+              lot mapping, 12V linear actuator blade lift, BH1750 lux monitoring, and motor current stall detection.
             </p>
             <div class="project-tech">
               <span class="tech-tag">Raspberry Pi 4</span>
@@ -1486,14 +2108,17 @@
         <!-- Project 3: Smart Blind Stick -->
         <div class="project-card" data-category="assistive robotics">
           <div class="project-img-wrapper">
-            <img src="assets/Smart Blind Stick AI Turn-by-Turn Navigation4.jpeg" alt="Smart Blind Stick AI Turn-by-Turn Navigation Handheld Hardware">
+            <img src="assets/Smart Blind Stick AI Turn-by-Turn Navigation4.jpeg"
+              alt="Smart Blind Stick AI Turn-by-Turn Navigation Handheld Hardware">
             <div class="project-badge-overlay">YOLOv8 • Turn-by-Turn GPS • 2 Videos &amp; 4 Photos</div>
           </div>
           <div class="project-content">
             <span class="project-category">Assistive AI &amp; Pedestrian Navigation • K2L</span>
             <h3 class="project-title">Smart Blind Stick: AI Turn-by-Turn Navigation</h3>
             <p class="project-desc">
-              Assistive mobility wand with Google Maps-style spoken walking directions (NEO-M9N GNSS + BNO055 IMU compass), A* auto-recalculation, directional haptic feedback, YOLOv8 Nano object detection, tactile braille keypad, and emergency SOS.
+              Assistive mobility wand with Google Maps-style spoken walking directions (NEO-M9N GNSS + BNO055 IMU
+              compass), A* auto-recalculation, directional haptic feedback, YOLOv8 Nano object detection, tactile
+              braille keypad, and emergency SOS.
             </p>
             <div class="project-tech">
               <span class="tech-tag">Raspberry Pi</span>
@@ -1505,22 +2130,26 @@
               <span class="tech-tag">2 Videos Included</span>
             </div>
             <div class="project-actions" style="display:flex; gap:10px; flex-wrap:wrap;">
-              <button class="btn-view-details" onclick="openModal('blindstick')">Inspect Prototype &amp; Videos (2) →</button>
+              <button class="btn-view-details" onclick="openModal('blindstick')">Inspect Prototype &amp; Videos (2)
+                →</button>
             </div>
           </div>
         </div>
 
         <!-- Project 4: Automated PCB Isolation Plotter -->
         <div class="project-card" data-category="pcb industrial">
-          <div class="project-img-wrapper" style="background:#0c1526; display:flex; align-items:center; justify-content:center;">
-            <img src="assets/robomanthan_logo.png" alt="RoboManthan Project Logo" style="object-fit:contain; padding:24px; max-height:220px;">
+          <div class="project-img-wrapper"
+            style="background:#0c1526; display:flex; align-items:center; justify-content:center;">
+            <img src="assets/robomanthan_logo.png" alt="RoboManthan Project Logo"
+              style="object-fit:contain; padding:24px; max-height:220px;">
             <div class="project-badge-overlay">RoboManthan • Gerber G-Code Engine</div>
           </div>
           <div class="project-content">
             <span class="project-category">Machine Tools &amp; EDA • RoboManthan</span>
             <h3 class="project-title">Automated PCB Isolation Plotter &amp; CNC Platform</h3>
             <p class="project-desc">
-              Full Python/Flask platform parsing RS-274X Gerber and Excellon drill files, calculating copper isolation contours and generating machine-ready G-code for Klipper-based CNC milling and plotting.
+              Full Python/Flask platform parsing RS-274X Gerber and Excellon drill files, calculating copper isolation
+              contours and generating machine-ready G-code for Klipper-based CNC milling and plotting.
             </p>
             <div class="project-tech">
               <span class="tech-tag">Python &amp; Flask</span>
@@ -1545,7 +2174,8 @@
             <span class="project-category">Autonomous Robotics &amp; AI • RoboManthan</span>
             <h3 class="project-title">NAVIS &amp; NAVIS 2.0: Autonomous Companion Robot</h3>
             <p class="project-desc">
-              Master-slave companion bot integrating Raspberry Pi for computer vision and NLP voice interaction with an ESP32 real-time motor/servo driver, controllable via an Android PWA/APK.
+              Master-slave companion bot integrating Raspberry Pi for computer vision and NLP voice interaction with an
+              ESP32 real-time motor/servo driver, controllable via an Android PWA/APK.
             </p>
             <div class="project-tech">
               <span class="tech-tag">Raspberry Pi</span>
@@ -1562,15 +2192,18 @@
 
         <!-- Project 6: Enterprise CCMS & Smart Metering Gateway -->
         <div class="project-card" data-category="industrial">
-          <div class="project-img-wrapper" style="background:#0c1526; display:flex; align-items:center; justify-content:center;">
-            <img src="assets/robomanthan_logo.png" alt="RoboManthan Project Logo" style="object-fit:contain; padding:24px; max-height:220px;">
+          <div class="project-img-wrapper"
+            style="background:#0c1526; display:flex; align-items:center; justify-content:center;">
+            <img src="assets/robomanthan_logo.png" alt="RoboManthan Project Logo"
+              style="object-fit:contain; padding:24px; max-height:220px;">
             <div class="project-badge-overlay">RoboManthan • Mutual-TLS &amp; DLMS</div>
           </div>
           <div class="project-content">
             <span class="project-category">Smart Grid &amp; Industrial IoT • RoboManthan</span>
             <h3 class="project-title">Industrial CCMS Gateway &amp; Latch Relay Fleet</h3>
             <p class="project-desc">
-              Enterprise ESP-IDF firmware for Centralized Control Monitoring Systems connecting over Mutual-TLS (port 8883) with AWS IoT Jobs OTA, Modbus RTU/DLMS parameter harvesting, and magnetic latching relay control.
+              Enterprise ESP-IDF firmware for Centralized Control Monitoring Systems connecting over Mutual-TLS (port
+              8883) with AWS IoT Jobs OTA, Modbus RTU/DLMS parameter harvesting, and magnetic latching relay control.
             </p>
             <div class="project-tech">
               <span class="tech-tag">ESP-IDF</span>
@@ -1587,17 +2220,23 @@
 
         <!-- Project 7: Autonomous Agricultural Mapping & Irrigation Robot -->
         <div class="project-card" data-category="robotics">
-          <div class="project-img-wrapper" style="background:linear-gradient(135deg, #061826 0%, #0c2d48 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; text-align:center;">
+          <div class="project-img-wrapper"
+            style="background:linear-gradient(135deg, #061826 0%, #0c2d48 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; text-align:center;">
             <div style="font-size:2.4rem; margin-bottom:8px;">🚜 📡 💦</div>
-            <span style="font-family:var(--font-mono); color:#38bdf8; font-size:0.85rem; font-weight:700; letter-spacing:0.5px;">ROS 2 HUMBLE • YDLIDAR X2 SLAM</span>
-            <span style="color:#94a3b8; font-size:0.75rem; font-family:var(--font-mono); margin-top:4px;">REP-105 TF TREE • 2D OCCUPANCY GRID MAPPING</span>
+            <span
+              style="font-family:var(--font-mono); color:#38bdf8; font-size:0.85rem; font-weight:700; letter-spacing:0.5px;">ROS
+              2 HUMBLE • YDLIDAR X2 SLAM</span>
+            <span style="color:#94a3b8; font-size:0.75rem; font-family:var(--font-mono); margin-top:4px;">REP-105 TF
+              TREE • 2D OCCUPANCY GRID MAPPING</span>
             <div class="project-badge-overlay">7th Sem Major Project • RNSIT</div>
           </div>
           <div class="project-content">
             <span class="project-category">Field Robotics &amp; ROS 2 SLAM • 7th Sem Major Project</span>
             <h3 class="project-title">Autonomous Agricultural Mapping &amp; Irrigation Robot</h3>
             <p class="project-desc">
-              Autonomous agricultural mobile robot combining 360° YDLIDAR 2D laser scanning, wheel odometry kinematics, and real-time SLAM (GMapping/Cartographer) on ROS 2 Humble for high-resolution field mapping, obstacle avoidance, and precision targeted irrigation pump actuation.
+              Autonomous agricultural mobile robot combining 360° YDLIDAR 2D laser scanning, wheel odometry kinematics,
+              and real-time SLAM (GMapping/Cartographer) on ROS 2 Humble for high-resolution field mapping, obstacle
+              avoidance, and precision targeted irrigation pump actuation.
             </p>
             <div class="project-tech">
               <span class="tech-tag">ROS 2 Humble</span>
@@ -1609,7 +2248,9 @@
             </div>
             <div class="project-actions" style="display:flex; gap:10px; flex-wrap:wrap;">
               <button class="btn-view-details" onclick="openModal('agribot')">Inspect Architecture →</button>
-              <a href="https://github.com/arfad22/Autonomous-Agricultural-Mapping-and-Irrigation-Robot" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:#1e293b; color:#38bdf8; border:1px solid rgba(56,189,248,0.4); padding:6px 12px; border-radius:6px; font-family:var(--font-mono); font-size:0.8rem; text-decoration:none;">GitHub Repo ↗</a>
+              <a href="https://github.com/arfad22/Autonomous-Agricultural-Mapping-and-Irrigation-Robot" target="_blank"
+                style="display:inline-flex; align-items:center; gap:6px; background:#1e293b; color:#38bdf8; border:1px solid rgba(56,189,248,0.4); padding:6px 12px; border-radius:6px; font-family:var(--font-mono); font-size:0.8rem; text-decoration:none;">GitHub
+                Repo ↗</a>
             </div>
           </div>
         </div>
@@ -1624,7 +2265,8 @@
             <span class="project-category">Embedded Systems • SAM'S DESIGN</span>
             <h3 class="project-title">Shirodhara Automated Ayurvedic Therapy System</h3>
             <p class="project-desc">
-              Medical therapy automation featuring closed-loop PID thermal control (DS18B20), synchronized oscillatory oil vessel dispensing, OLED SSD1306 UI, and dual-pump oil recirculation.
+              Medical therapy automation featuring closed-loop PID thermal control (DS18B20), synchronized oscillatory
+              oil vessel dispensing, OLED SSD1306 UI, and dual-pump oil recirculation.
             </p>
             <div class="project-tech">
               <span class="tech-tag">ESP32</span>
@@ -1642,18 +2284,21 @@
 
         <!-- Project 9: ESP32 Relay PCB -->
         <div class="project-card" data-category="pcb industrial">
-          <div class="project-img-wrapper" style="background:#0c1526; display:flex; align-items:center; justify-content:center;">
-            <img src="assets/robomanthan_logo.png" alt="RoboManthan Project Logo" style="object-fit:contain; padding:24px; max-height:220px;">
+          <div class="project-img-wrapper"
+            style="background:#0c1526; display:flex; align-items:center; justify-content:center;">
+            <img src="assets/robomanthan_logo.png" alt="RoboManthan Project Logo"
+              style="object-fit:contain; padding:24px; max-height:220px;">
             <div class="project-badge-overlay">RoboManthan • 4-Ch Optoisolated AC Relay</div>
           </div>
           <div class="project-content">
             <span class="project-category">PCB Design &amp; Power Automation • RoboManthan</span>
             <h3 class="project-title">ESP32 4-Channel Optoisolated Relay Module</h3>
             <p class="project-desc">
-              Custom-engineered PCB for 230V AC home appliance automation with complete galvanic isolation (PC817 optocouplers), flyback protection diodes, isolation milling, and status LEDs.
+              Custom-engineered PCB for 230V AC home appliance automation with complete galvanic isolation (PC817
+              optocouplers), flyback protection diodes, isolation milling, and status LEDs.
             </p>
             <div class="project-tech">
-              <span class="tech-tag">KiCad 8</span>
+              <span class="tech-tag">KiCad </span>
               <span class="tech-tag">PC817 Optocouplers</span>
               <span class="tech-tag">AC Mains Clearance</span>
               <span class="tech-tag">Gerber Export</span>
@@ -1667,17 +2312,22 @@
 
         <!-- Project 10: Disaster Alerting System -->
         <div class="project-card" data-category="industrial">
-          <div class="project-img-wrapper" style="background:linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; text-align:center;">
+          <div class="project-img-wrapper"
+            style="background:linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; text-align:center;">
             <div style="font-size:2.4rem; margin-bottom:8px;">🌊 ⚡ 📱</div>
-            <span style="font-family:var(--font-mono); color:#f59e0b; font-size:0.85rem; font-weight:700; letter-spacing:0.5px;">DUAL-THRESHOLD SEISMIC &amp; MULTI-STAGE FLOOD</span>
-            <span style="color:#94a3b8; font-size:0.75rem; font-family:var(--font-mono); margin-top:4px;">ADXL335 ACCELEROMETER • SIM800C GSM DISPATCH</span>
+            <span
+              style="font-family:var(--font-mono); color:#f59e0b; font-size:0.85rem; font-weight:700; letter-spacing:0.5px;">DUAL-THRESHOLD
+              SEISMIC &amp; MULTI-STAGE FLOOD</span>
+            <span style="color:#94a3b8; font-size:0.75rem; font-family:var(--font-mono); margin-top:4px;">ADXL335
+              ACCELEROMETER • SIM800C GSM DISPATCH</span>
             <div class="project-badge-overlay">Cellular IoT Telemetry • SIM800C</div>
           </div>
           <div class="project-content">
             <span class="project-category">IoT &amp; Embedded Systems</span>
             <h3 class="project-title">IoT Seismic &amp; Flood Early Warning Station</h3>
             <p class="project-desc">
-              Multi-threat disaster monitor using ADXL335 3-axis accelerometer for calibrated dual-level tremor detection and magnetic float sensors for flood stages with instant multi-user SMS dispatch.
+              Multi-threat disaster monitor using ADXL335 3-axis accelerometer for calibrated dual-level tremor
+              detection and magnetic float sensors for flood stages with instant multi-user SMS dispatch.
             </p>
             <div class="project-tech">
               <span class="tech-tag">ESP32</span>
@@ -1702,7 +2352,8 @@
             <span class="project-category">Hardware Prototyping • K2L</span>
             <h3 class="project-title">Smart Dimmable LED Chess Board</h3>
             <p class="project-desc">
-              USB-C rechargeable warm white COB LED illuminated chess board with 1S2P Li-ion cells, TP4056 BMS with DW01 protection, MT3608 boost converter, and 95% efficient NE555 / MOSFET PWM dimming.
+              USB-C rechargeable warm white COB LED illuminated chess board with 1S2P Li-ion cells, TP4056 BMS with DW01
+              protection, MT3608 boost converter, and 95% efficient NE555 / MOSFET PWM dimming.
             </p>
             <div class="project-tech">
               <span class="tech-tag">18650 Li-ion</span>
@@ -1727,7 +2378,8 @@
             <span class="project-category">Teleoperation &amp; Audio • RoboManthan</span>
             <h3 class="project-title">WebRTC Encrypted Walkie-Talkie Intercom</h3>
             <p class="project-desc">
-              Full-duplex real-time audio intercom platform built on Node.js, WebSockets, and WebRTC with self-signed SSL encryption for teleoperating mobile robots and team communications.
+              Full-duplex real-time audio intercom platform built on Node.js, WebSockets, and WebRTC with self-signed
+              SSL encryption for teleoperating mobile robots and team communications.
             </p>
             <div class="project-tech">
               <span class="tech-tag">Node.js &amp; Express</span>
@@ -1745,14 +2397,17 @@
         <!-- Project 12: Laptop Motherboard Micro-Soldering & Schematic Diagnostics (LinkedIn) -->
         <div class="project-card" data-category="pcb industrial linkedin">
           <div class="project-img-wrapper">
-            <img src="assets/linkedin_motherboard_microsoldering.jpeg" alt="Laptop Motherboard Micro-Soldering & Blown Fuse FV1 Rework">
+            <img src="assets/linkedin_motherboard_microsoldering.jpeg"
+              alt="Laptop Motherboard Micro-Soldering & Blown Fuse FV1 Rework">
             <div class="project-badge-overlay">OpenBoardView • Micro-Soldering</div>
           </div>
           <div class="project-content">
             <span class="project-category">Component-Level Diagnostics • LinkedIn Featured</span>
             <h3 class="project-title">Laptop Motherboard Micro-Soldering &amp; Schematic Diagnostics</h3>
             <p class="project-desc">
-              Root-cause diagnostics and repair of blown display backlight power rails (+BL_PWR_SRC). Traced boardview nets from screen connector JEDP1 to blown SMD fuse FV1; executed precision microscope micro-soldering, component jumpering, and board restoration.
+              Root-cause diagnostics and repair of blown display backlight power rails (+BL_PWR_SRC). Traced boardview
+              nets from screen connector JEDP1 to blown SMD fuse FV1; executed precision microscope micro-soldering,
+              component jumpering, and board restoration.
             </p>
             <div class="project-tech">
               <span class="tech-tag">OpenBoardView</span>
@@ -1764,7 +2419,9 @@
             </div>
             <div class="project-actions" style="display:flex; gap:10px; flex-wrap:wrap;">
               <button class="btn-view-details" onclick="openModal('motherboard')">Inspect Diagnostics →</button>
-              <a href="https://www.linkedin.com/in/kirthan-k-m-81a122308/" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:rgba(0,119,181,0.2); color:#38bdf8; border:1px solid #0077b5; padding:6px 12px; border-radius:6px; font-family:var(--font-mono); font-size:0.8rem; text-decoration:none;">LinkedIn ↗</a>
+              <a href="https://www.linkedin.com/in/kirthan-k-m-81a122308/" target="_blank"
+                style="display:inline-flex; align-items:center; gap:6px; background:rgba(0,119,181,0.2); color:#38bdf8; border:1px solid #0077b5; padding:6px 12px; border-radius:6px; font-family:var(--font-mono); font-size:0.8rem; text-decoration:none;">LinkedIn
+                ↗</a>
             </div>
           </div>
         </div>
@@ -1772,14 +2429,17 @@
         <!-- Project 13: Zebronics Party Speaker Audio Amp Teardown & Class-D Retrofit (LinkedIn) -->
         <div class="project-card" data-category="industrial linkedin">
           <div class="project-img-wrapper">
-            <img src="assets/linkedin_zebronics_speaker_assembled.jpeg" alt="Zebronics Party Speaker Hardware Restoration">
+            <img src="assets/linkedin_zebronics_speaker_assembled.jpeg"
+              alt="Zebronics Party Speaker Hardware Restoration">
             <div class="project-badge-overlay">Class-D Audio • Hardware Revival</div>
           </div>
           <div class="project-content">
             <span class="project-category">Audio Electronics &amp; Hardware Revival • LinkedIn Featured</span>
             <h3 class="project-title">Zebronics Party Speaker Audio Amp Teardown &amp; Class-D Retrofit</h3>
             <p class="project-desc">
-              Teardown and complete hardware revival of a failed Zebronics high-power trolley speaker. Diagnosed electrolyte capacitor crust leakage and fried driver IC; retrofitted an upgraded high-efficiency dual-channel Class-D stereo audio amplifier module with filtered DC power bus.
+              Teardown and complete hardware revival of a failed Zebronics high-power trolley speaker. Diagnosed
+              electrolyte capacitor crust leakage and fried driver IC; retrofitted an upgraded high-efficiency
+              dual-channel Class-D stereo audio amplifier module with filtered DC power bus.
             </p>
             <div class="project-tech">
               <span class="tech-tag">Class-D Stereo Amp</span>
@@ -1790,7 +2450,9 @@
             </div>
             <div class="project-actions" style="display:flex; gap:10px; flex-wrap:wrap;">
               <button class="btn-view-details" onclick="openModal('zebronics')">Inspect Teardown →</button>
-              <a href="https://www.linkedin.com/in/kirthan-k-m-81a122308/" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:rgba(0,119,181,0.2); color:#38bdf8; border:1px solid #0077b5; padding:6px 12px; border-radius:6px; font-family:var(--font-mono); font-size:0.8rem; text-decoration:none;">LinkedIn ↗</a>
+              <a href="https://www.linkedin.com/in/kirthan-k-m-81a122308/" target="_blank"
+                style="display:inline-flex; align-items:center; gap:6px; background:rgba(0,119,181,0.2); color:#38bdf8; border:1px solid #0077b5; padding:6px 12px; border-radius:6px; font-family:var(--font-mono); font-size:0.8rem; text-decoration:none;">LinkedIn
+                ↗</a>
             </div>
           </div>
         </div>
@@ -1805,18 +2467,22 @@
             <span class="project-category">Hardware Mentorship &amp; Training • LinkedIn Featured</span>
             <h3 class="project-title">PCB Design &amp; Hardware Prototyping Workshop Lead</h3>
             <p class="project-desc">
-              Conducted interactive university lab workshops mentoring 50+ students in electronic schematic design, KiCad 2-layer PCB layout routing, surface-mount soldering techniques, and hardware test bench verification.
+              Conducted interactive university lab workshops mentoring 50+ students in electronic schematic design,
+              KiCad 2-layer PCB layout routing, surface-mount soldering techniques, and hardware test bench
+              verification.
             </p>
             <div class="project-tech">
               <span class="tech-tag">Workshop Instructor</span>
-              <span class="tech-tag">KiCad 8.0</span>
+              <span class="tech-tag">KiCad </span>
               <span class="tech-tag">SMD Soldering Lab</span>
               <span class="tech-tag">Bench Testing</span>
               <span class="tech-tag">LinkedIn Featured</span>
             </div>
             <div class="project-actions" style="display:flex; gap:10px; flex-wrap:wrap;">
               <button class="btn-view-details" onclick="openModal('workshop')">View Workshop Details →</button>
-              <a href="https://www.linkedin.com/in/kirthan-k-m-81a122308/" target="_blank" style="display:inline-flex; align-items:center; gap:6px; background:rgba(0,119,181,0.2); color:#38bdf8; border:1px solid #0077b5; padding:6px 12px; border-radius:6px; font-family:var(--font-mono); font-size:0.8rem; text-decoration:none;">LinkedIn ↗</a>
+              <a href="https://www.linkedin.com/in/kirthan-k-m-81a122308/" target="_blank"
+                style="display:inline-flex; align-items:center; gap:6px; background:rgba(0,119,181,0.2); color:#38bdf8; border:1px solid #0077b5; padding:6px 12px; border-radius:6px; font-family:var(--font-mono); font-size:0.8rem; text-decoration:none;">LinkedIn
+                ↗</a>
             </div>
           </div>
         </div>
@@ -1838,33 +2504,48 @@
         <div class="edu-card">
           <span class="badge-award">DEGREE PROGRAM</span>
           <h3 style="color:#fff; font-size:1.15rem; margin-bottom:4px;">B.E. in Electronics &amp; Communication</h3>
-          <p style="color:var(--accent-emerald); font-weight:600; font-size:0.9rem; margin-bottom:8px;">R N S Institute of Technology (RNSIT), Bangalore</p>
-          <p style="color:var(--text-muted); font-size:0.85rem; font-family:var(--font-mono); margin-bottom:12px;">Oct 2023 – May 2026 | USN: 1RN23EC416</p>
-          <p style="color:var(--text-muted); font-size:0.88rem;">Autonomous Institution affiliated with VTU, NAAC 'A+' accredited. Focus on Embedded Systems, Wireless IoT, Digital Signal Processing, and Edge AI.</p>
+          <p style="color:var(--accent-emerald); font-weight:600; font-size:0.9rem; margin-bottom:8px;">R N S Institute
+            of Technology (RNSIT), Bangalore</p>
+          <p style="color:var(--text-muted); font-size:0.85rem; font-family:var(--font-mono); margin-bottom:12px;">Oct
+            2023 – May 2026 | USN: 1RN23EC416</p>
+          <p style="color:var(--text-muted); font-size:0.88rem;">Autonomous Institution affiliated with VTU, NAAC 'A+'
+            accredited. Focus on Embedded Systems, Wireless IoT, Digital Signal Processing, and Edge AI.</p>
         </div>
 
         <div class="edu-card">
           <span class="badge-award">DIPLOMA PROGRAM</span>
           <h3 style="color:#fff; font-size:1.15rem; margin-bottom:4px;">Diploma in Mechatronics Engineering</h3>
-          <p style="color:var(--accent-emerald); font-weight:600; font-size:0.9rem; margin-bottom:8px;">S J (Govt) Polytechnic, Bangalore</p>
-          <p style="color:var(--text-muted); font-size:0.85rem; font-family:var(--font-mono); margin-bottom:12px;">Sept 2020 – May 2023</p>
-          <p style="color:var(--text-muted); font-size:0.88rem;">Comprehensive electro-mechanical fundamentals: industrial automation, pneumatics, hydraulic actuators, sensors, CNC machining, and rapid CAD prototyping.</p>
+          <p style="color:var(--accent-emerald); font-weight:600; font-size:0.9rem; margin-bottom:8px;">S J (Govt)
+            Polytechnic, Bangalore</p>
+          <p style="color:var(--text-muted); font-size:0.85rem; font-family:var(--font-mono); margin-bottom:12px;">Sept
+            2020 – May 2023</p>
+          <p style="color:var(--text-muted); font-size:0.88rem;">Comprehensive electro-mechanical fundamentals:
+            industrial automation, pneumatics, hydraulic actuators, sensors, CNC machining, and rapid CAD prototyping.
+          </p>
         </div>
 
         <div class="edu-card">
-          <span class="badge-award" style="background:rgba(239, 68, 68, 0.15); border-color:#ef4444; color:#ef4444;">HACKATHON WINNER</span>
+          <span class="badge-award"
+            style="background:rgba(239, 68, 68, 0.15); border-color:#ef4444; color:#ef4444;">HACKATHON WINNER</span>
           <h3 style="color:#fff; font-size:1.15rem; margin-bottom:4px;">2nd Place — Robomanthan x RNSIT Hackathon</h3>
-          <p style="color:var(--accent-emerald); font-weight:600; font-size:0.9rem; margin-bottom:8px;">5-Day Robotics &amp; IoT Hackathon</p>
-          <p style="color:var(--text-muted); font-size:0.85rem; font-family:var(--font-mono); margin-bottom:12px;">Awarded: Nov 28, 2025</p>
-          <p style="color:var(--text-muted); font-size:0.88rem;">Designed and executed an end-to-end intelligent IoT robotics solution under intense 5-day competitive prototyping conditions.</p>
+          <p style="color:var(--accent-emerald); font-weight:600; font-size:0.9rem; margin-bottom:8px;">5-Day Robotics
+            &amp; IoT Hackathon</p>
+          <p style="color:var(--text-muted); font-size:0.85rem; font-family:var(--font-mono); margin-bottom:12px;">
+            Awarded: Nov 28, 2025</p>
+          <p style="color:var(--text-muted); font-size:0.88rem;">Designed and executed an end-to-end intelligent IoT
+            robotics solution under intense 5-day competitive prototyping conditions.</p>
         </div>
 
         <div class="edu-card">
           <span class="badge-award">RESEARCH FELLOWSHIP</span>
           <h3 style="color:#fff; font-size:1.15rem; margin-bottom:4px;">RNSIT Seed Grant &amp; URF-II Fellow</h3>
-          <p style="color:var(--accent-emerald); font-weight:600; font-size:0.9rem; margin-bottom:8px;">Undergraduate Research Fellowship</p>
-          <p style="color:var(--text-muted); font-size:0.85rem; font-family:var(--font-mono); margin-bottom:12px;">Feb 2026 – Present</p>
-          <p style="color:var(--text-muted); font-size:0.88rem;">Awarded research funding and lab resources for the <em>FidoFeed</em> autonomous pet companion bot; complete patent specification and 7 CAD drawings authored.</p>
+          <p style="color:var(--accent-emerald); font-weight:600; font-size:0.9rem; margin-bottom:8px;">Undergraduate
+            Research Fellowship</p>
+          <p style="color:var(--text-muted); font-size:0.85rem; font-family:var(--font-mono); margin-bottom:12px;">Feb
+            2026 – Present</p>
+          <p style="color:var(--text-muted); font-size:0.88rem;">Awarded research funding and lab resources for the
+            <em>FidoFeed</em> autonomous pet companion bot; complete patent specification and 7 CAD drawings authored.
+          </p>
         </div>
       </div>
     </div>
@@ -1888,7 +2569,8 @@
         <a href="PORTFOLIO.md">Markdown Portfolio</a>
       </div>
       <p>© 2026 Kirthan K M • Electronics, Embedded Systems &amp; Robotics Portfolio</p>
-      <p style="font-size:0.75rem; color:#64748b; margin-top:6px;">Designed &amp; Engineered with Precision | Bangalore, India</p>
+      <p style="font-size:0.75rem; color:#64748b; margin-top:6px;">Designed &amp; Engineered with Precision | Bangalore,
+        India</p>
     </div>
   </footer>
 
@@ -1897,7 +2579,7 @@
     function filterProjects(category) {
       const cards = document.querySelectorAll('.project-card');
       const buttons = document.querySelectorAll('.filter-btn');
-      
+
       buttons.forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
 
@@ -2142,7 +2824,7 @@ if (currentTemp < targetTemp - 0.5) {
       },
       relaypcb: {
         title: "ESP32 4-Channel Optoisolated Relay Module",
-        tag: "RoboManthan Project • KiCad 8.0 • 2-Layer Isolated AC Mains PCB",
+        tag: "RoboManthan Project • KiCad• 2-Layer Isolated AC Mains PCB",
         img: "assets/robomanthan_logo.png",
         gallery: [
           { src: "assets/robomanthan_logo.png", title: "RoboManthan ESP32 Relay Module Project Logo" }
@@ -2192,7 +2874,7 @@ if (abs(xAccel) > 1.5) {
         codeSnippet: `// PWM Dimming Frequency: 1.5kHz (flicker-free)
 // Efficiency: ~95% with zero heat dissipation compared to linear rheostats.`
       },
-            motherboard: {
+      motherboard: {
         title: "Laptop Motherboard Micro-Soldering & Schematic Diagnostics",
         tag: "Component-Level Repair • OpenBoardView • Micro-Soldering • LinkedIn Featured",
         img: "assets/linkedin_motherboard_microsoldering.jpeg",
@@ -2297,7 +2979,7 @@ localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStr
       if (!data) return;
 
       const body = document.getElementById('modalBody');
-      
+
       let galleryHtml = '';
       if (data.gallery && data.gallery.length > 0) {
         galleryHtml = `
@@ -2413,7 +3095,7 @@ localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStr
       if (e.target.id === 'projectModal') closeModal();
     }
 
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeModal();
     });
   </script>
@@ -2460,7 +3142,7 @@ localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStr
           const rect = card.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
-          
+
           card.style.setProperty('--mouse-x', `${x}px`);
           card.style.setProperty('--mouse-y', `${y}px`);
 
@@ -2508,7 +3190,7 @@ localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStr
       });
 
       // 3D Geometry: Floating IC Packages & Traces
-      const CHIP_LABELS = ['ESP32-S3', 'ROS 2', 'STM32', 'YOLOv8', 'RP2040', 'KiCad 8', 'NEO-M9N', 'DLMS'];
+      const CHIP_LABELS = ['ESP32-S3', 'ROS 2', 'STM32', 'YOLOv8', 'RP2040', 'KiCad ', 'NEO-M9N', 'DLMS'];
       const chips = [];
       const traces = [];
       const vias = [];
@@ -2539,7 +3221,7 @@ localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStr
         // Generate Orthogonal PCB Traces with 45-degree chamfers
         const cols = Math.floor(width / 90);
         const rows = Math.floor(height / 90);
-        
+
         for (let r = 0; r < rows; r++) {
           for (let c = 0; c < cols; c++) {
             if (Math.random() > 0.4) continue;
@@ -2802,7 +3484,125 @@ localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStr
 
       render();
     })();
+
+    // --- 4. Interactive 3D Business Card Flip & vCard Generator ---
+    window.toggleCardFlip = function(e) {
+      if (e) {
+        if (e.target && (e.target.closest('a') || e.target.closest('button') || e.target.closest('.btn-client-action'))) {
+          return;
+        }
+      }
+      const wrapper = document.getElementById('businessCardWrapper');
+      const inner = document.getElementById('businessCardInner');
+      if (!wrapper || !inner) return;
+
+      const isFlipped = wrapper.classList.toggle('flipped');
+      if (isFlipped) {
+        inner.style.transform = 'rotateY(180deg)';
+      } else {
+        inner.style.transform = 'rotateY(0deg)';
+      }
+    };
+
+    // 3D Mouse Parallax on Business Card (Desktop)
+    (function initBusinessCardParallax() {
+      const wrapper = document.getElementById('businessCardWrapper');
+      const inner = document.getElementById('businessCardInner');
+      if (!wrapper || !inner) return;
+
+      wrapper.addEventListener('mousemove', function(e) {
+        if (wrapper.classList.contains('flipped')) return;
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const deltaX = (x - centerX) / centerX;
+        const deltaY = (y - centerY) / centerY;
+
+        const rotX = -deltaY * 12;
+        const rotY = deltaX * 12;
+        inner.style.transform = `rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg)`;
+      });
+
+      wrapper.addEventListener('mouseleave', function() {
+        if (!wrapper.classList.contains('flipped')) {
+          inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        }
+      });
+    })();
+
+    // vCard Generator and Downloader (Compatible with iOS, Android, and Desktop)
+    window.downloadVCard = function(e) {
+      if (e && e.stopPropagation) e.stopPropagation();
+
+      const lines = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'N:K M;Kirthan;;;',
+        'FN:Kirthan K M',
+        'ORG:Hardware & Embedded Systems Engineering',
+        'TITLE:Embedded Systems & Autonomous Robotics Consultant',
+        'TEL;TYPE=CELL,VOICE,PREF:+918618885273',
+        'EMAIL;TYPE=INTERNET,PREF:kirthankalburgi8684@gmail.com',
+        'URL;TYPE=WORK:https://ki941.github.io/Kirthan_portfolio/',
+        'X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/kirthan-k-m-81a122308/',
+        'ADR;TYPE=WORK:;;Bangalore;Karnataka;560064;India',
+        'NOTE:Specialist in Custom PCB Design (KiCad 8), Embedded Firmware (ESP-IDF, STM32, FreeRTOS), Autonomous Robotics (ROS 2 Humble Nav2 SLAM), and Edge AI Vision (YOLOv8). Available for global freelance contracts.',
+        'END:VCARD'
+      ];
+      const vcardData = lines.join('\r\n');
+      const fileName = 'Kirthan_KM_Contact.vcf';
+
+      try {
+        const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+        if (window.navigator && window.navigator.msSaveBlob) {
+          window.navigator.msSaveBlob(blob, fileName);
+        } else {
+          const url = window.URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.style.display = 'none';
+          link.href = url;
+          link.setAttribute('download', fileName);
+          document.body.appendChild(link);
+          link.click();
+          setTimeout(function() {
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+          }, 300);
+        }
+      } catch (err) {
+        const dataUri = 'data:text/vcard;charset=utf-8,' + encodeURIComponent(vcardData);
+        const link = document.createElement('a');
+        link.style.display = 'none';
+        link.href = dataUri;
+        link.setAttribute('download', fileName);
+        document.body.appendChild(link);
+        link.click();
+        setTimeout(function() {
+          document.body.removeChild(link);
+        }, 300);
+      }
+
+      showVCardToast();
+    };
+
+    function showVCardToast() {
+      let toast = document.getElementById('vcardToast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'vcardToast';
+        toast.className = 'vcard-toast';
+        toast.innerHTML = '<span>✅</span> <span><strong>Contact Card Downloaded!</strong> (Kirthan_KM_Contact.vcf)</span>';
+        document.body.appendChild(toast);
+      }
+      toast.classList.add('show');
+      setTimeout(function() {
+        toast.classList.remove('show');
+      }, 3500);
+    }
   </script>
 
 </body>
+
 </html>
